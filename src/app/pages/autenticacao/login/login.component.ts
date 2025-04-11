@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatInput, MatInputModule } from '@angular/material/input';
@@ -7,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',

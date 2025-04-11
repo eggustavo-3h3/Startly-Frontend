@@ -29,8 +29,6 @@ export class AuthService{
 
                     observable.next(response);
                     observable.complete();
-
-                    this.router.navigate(['/categoria']);
                 },
                 error: (error) => {
                     observable.error(error);

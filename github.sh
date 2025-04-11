@@ -7,30 +7,10 @@ export email="telesmirela552@gmail.com"
 export repositorio="https://github.com/eggustavo-3h3/AnaPaulaEstetica-Frontend.git";
 
 #Daqui pra baixo mexa somente se for realmente necessário ou se souber o que está fazendo :P
-
-rm -Rf .git
-
-export branch_name="aula-$(date -I)"
-
-#add linux, mac and windows folders to gitignore
-echo "" >> .gitignore
-echo "#ignoring windows, mac and linux folders" >> .gitignore
-echo "windows" >> .gitignore
-echo "mac" >> .gitignore
-echo "linux" >> .gitignore
-
-git init
-git remote add origin $repositorio
-git checkout -b $branch_name
-
 git config --global user.name $name
 git config --global user.email $email
 
-git add .gitignore
-git commit -m "added ignored files" .gitignore
-
 git add .
+git commit -am "código produzido no encontro do dia $(date)"
 
-git commit -am "branch com o código da aula do dia $(date)"
-
-git push origin $branch_name
+git push origin main
