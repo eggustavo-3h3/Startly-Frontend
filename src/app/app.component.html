@@ -1,14 +1,77 @@
-<mat-toolbar color="primary">
-  <a mat-button routerLink="tipo-servico/listar">Serviços</a>
+<app-base-ui>
+  <router-outlet>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+    <nav class="centro">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="fonte centro">
+        <img class="logo" src="logo.png" alt="logo">
+        <li><a class="active" href="/">Início</a></li>
+        <li><a href="#o-que-sao-startups">O que são Startups?</a></li>
+        <li><a href="/portifolio">Portifólio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
 
-  <a mat-button routerLink="/login">Login</a>
-</mat-toolbar>
+      </ul>
 
-<router-outlet />
+      <div class="profile">
+        <a routerLink="/login"><img src="usuario.png" class="perfil" alt="Perfil" /></a>
+      </div>
+    </nav>
 
-<div>
-  <h2>Rodapé</h2>
-</div>
+    <br><br>
+
+    <mat-toolbar color="primary">
+
+
+      <span class="example-fill-remaining-space"></span>
+
+    </mat-toolbar>
+  </router-outlet>
+
+  <footer class="footer">
+
+    <div class="left">
+
+      <h4 class="title-footer">Menu</h4>
+
+      <p class="links">
+
+        <a href="/" title="Home">Início</a>
+        <a href="#o-que-sao-startups" title="Html">O que são startups?</a>
+        <a href="/portifolio" title="Css">Portifólio</a>
+        <a href="#sobre" title="jQuery">Sobre</a>
+
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+
+      </div>
+
+      <p class="Copyright">Copyright &copy; 2025 Seu site - Todos os Direitos Reservados.</p>
+
+
+    </div><!--Left-->
+
+    <div class="right">
+
+      <h4 class="title-footer fonte">Contate-nos</h4>
+
+      <form action="#" method="post">
+
+        <p>+55 (16)99325-3540</p>
+        <br>
+        <p>startly&#64;gmail.com</p>
+
+      </form>
+
+    </div><!--Right-->
+
+  </footer>
+</app-base-ui>

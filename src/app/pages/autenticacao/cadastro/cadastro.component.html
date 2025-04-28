@@ -1,0 +1,128 @@
+<h1 class="startup">Cadastre-se</h1>
+
+<div>
+<form action="" method="get">
+    <div class="campos fonte">
+
+        <div class="esquerda">
+            <div class="nome">
+                <label>Qual o nome da sua Startup?</label>
+                <input type="text" class="inputTexto" required />
+            </div>
+            <div class="Descricao">
+                <label>Descreva sua Startup</label>
+                <input type="text" id="descricao" class="inputTexto" required />
+            </div>
+            <div class="objetivo">
+                <label>Descreva os objetivos e metas da sua Startup:</label>
+                <input type="text" id="objetivo" class="inputTexto" required />
+            </div>
+            <div class="cnpj">
+                <label>CNPJ:</label>
+                <input type="text" id="cnpj" class="inputTexto"  />
+            </div>
+
+            NAO SEI COMO FAZ
+            <div class="linkdln">
+                <label>Link do LinkedIn:</label>
+                <input type="text" id="linkdln" class="inputTexto" />
+            </div>
+
+            <div class="telefone">
+                <label>Telefone:</label>
+                <input type="text" id="telefone" class="inputTexto" required />
+            </div>
+
+            NAO SEI COMO FAZ
+            <div class="logo">
+                <label>Logo:</label>
+                <img src="perfilFoto.png" alt="">
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="direita">
+
+            NAO SEI COMO FAZ
+            <div class="emailC">
+                <label>E-mail Corporativo:</label>
+                <input type="email" id="emailC" class="inputTexto" required />
+            </div>
+
+            <div class="qtdFunc">
+                <label>Quantidade de Funcionários:</label>
+                <input type="number" id="qtdFunc" class="inputTexto" required />
+            </div>
+
+            NAO SEI COMO FAZ
+            <div class="tipoCliente">
+                <label>Tipo de Cliente</label>
+                <select id="tipoCliente" required>
+                    <option value="Estadual">Estadual</option>
+                    <option value="Nacional">Nacional</option>
+                    <option value="Internacional">Internacional</option>
+                </select>
+            </div>
+
+            PRESCISA PUXAR DA API AS ATUACOES CADASTRADAS E MOSTRAR AQUI PARA PESSOA SELECIONAR
+            <div class="areaAtuacao">
+                <label>Área de Atuação:</label>
+            </div>
+             
+            NAO SEI COMO FAZ
+            <div class="ticket">
+                <label>Ticket Médio:</label>
+                <select id="ticket" required>
+                    <option value="10-49">10 a 49</option>
+                    <option value="50-99">50 a 99</option>
+                    <option value="100+">100+</option>
+                </select>
+            </div>
+         
+            <div class="respCadastro">
+                <label>Responsável pelo Cadastro:</label>
+                <input type="text" id="respCadastro" class="inputTexto" required />
+            </div>
+
+            NAO SEI COMO FAZ
+            <div class="emailPessoal">
+                <label>E-mail Pessoa (opcional):</label>
+                <input type="email" id="emailPessoal" class="inputTexto"/>
+            </div>
+
+            <div class="cep">
+                <label>CEP:</label>
+                <input type="text" id="cep" class="inputTexto" required />
+            </div>
+
+            <div class="logradouro">
+                <label>Logradouro:</label>
+                <input type="text" id="logradouro" placeholder="Ex: Av. Felipe Amador Junior" class="inputTexto" required />
+            </div>
+
+            <div class="numero">
+                <label>Número da Residencia:</label>
+                <input type="number" id="numero" class="inputTexto" required />
+            </div>
+
+            <div class="estado">
+                <label>Municipio:</label>
+                <input type="text" id="municipio" class="inputTexto" required />
+            </div>
+
+            <div class="imagens">
+                <label>Adicione imagens para facilitar a compreemsão dos investidores:</label>
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="botao">
+        <button type="submit" class="botoes">Cadastrar</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    /* background-color: #ceddfc; */
+    font-family: 'Jersey 10', sans-serif;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .logo span {
+
+    font-size: 2rem;
+    color: #2d3c5d;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 5rem;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #2d3c5d;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #4c5f85;
+  }
+  
+  .profile img {
+    height: 40px;
+    border-radius: 50%;
+  }
+  
