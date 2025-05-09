@@ -16,13 +16,22 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .conhecer{
+    display: block;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
   
   .conteudo {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
     width: 100%;
-    justify-content: center
+    justify-content: center;
+   
   
   }
   
@@ -62,7 +71,7 @@
   .p1{
     font-family: "Jersey 10", serif;
     color: #1b2394;
-    font-size: 130%;
+    font-size: 200%;
     padding-top: 45%;
   }
   
@@ -78,16 +87,7 @@
     font-size: 110%;
   }
   
-  button{
-    background-color: #96acc4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: "Jersey 10", serif;
-    font-size: 130%;
-    color: #030599;
-    align-items: center;
-  }
+
   
   .fundo{
     background-color: #b4c1cf;

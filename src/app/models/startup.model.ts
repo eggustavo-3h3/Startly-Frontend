@@ -1,3 +1,10 @@
+import { Atuacao } from "./atuacoes.model";
+import { StartupContatos } from "./contatos.model";
+import { EnumTicketMedio } from "./enumTicketMedio.model";
+import { EnumTipoDeAtendimento } from "./enumTipoAtendimento.model";
+import { StartupImagem } from "./imagem.model";
+import { StartupVideo } from "./videos.model";
+
 export interface Startup {
     id?: number,
     nome: string,   
@@ -12,13 +19,14 @@ export interface Startup {
     UF: string,
     siteStartup?: string,
     quantidadeFuncionario: number,
-    tipoAtendimento: string,
-    ticket: string,
+    tipoAtendimento: EnumTipoDeAtendimento[],
+    ticket: EnumTicketMedio[],
     responsavelCadastro: string,
     Login: string,
     senha: string,
-    atuacoes: string,
-    Imagens : string,
-    videos: string,
-    Contatos: string,
+    atuacoes: Atuacao[],
+    imagens : StartupImagem[],
+    videos: StartupVideo[],
+    Contatos: StartupContatos[],
 }
+

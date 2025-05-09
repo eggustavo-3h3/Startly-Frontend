@@ -22,7 +22,7 @@
                 <input type="text" id="cnpj" class="inputTexto"  />
             </div>
 
-            NAO SEI COMO FAZ
+ 
             <div class="linkdln">
                 <label>Link do LinkedIn:</label>
                 <input type="text" id="linkdln" class="inputTexto" />
@@ -33,12 +33,12 @@
                 <input type="text" id="telefone" class="inputTexto" required />
             </div>
 
-            NAO SEI COMO FAZ
+    
             <div class="logo">
                 <label>Logo:</label>
-                <img src="perfilFoto.png" alt="">
+                <img [src]="base64Image" alt="">
                 <div class="mb-3">
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
 
         <div class="direita">
 
-            NAO SEI COMO FAZ
+
             <div class="emailC">
                 <label>E-mail Corporativo:</label>
                 <input type="email" id="emailC" class="inputTexto" required />
@@ -57,7 +57,6 @@
                 <input type="number" id="qtdFunc" class="inputTexto" required />
             </div>
 
-            NAO SEI COMO FAZ
             <div class="tipoCliente">
                 <label>Tipo de Cliente</label>
                 <select id="tipoCliente" required>
@@ -67,12 +66,11 @@
                 </select>
             </div>
 
-            PRESCISA PUXAR DA API AS ATUACOES CADASTRADAS E MOSTRAR AQUI PARA PESSOA SELECIONAR
             <div class="areaAtuacao">
                 <label>Área de Atuação:</label>
             </div>
              
-            NAO SEI COMO FAZ
+
             <div class="ticket">
                 <label>Ticket Médio:</label>
                 <select id="ticket" required>
@@ -87,7 +85,6 @@
                 <input type="text" id="respCadastro" class="inputTexto" required />
             </div>
 
-            NAO SEI COMO FAZ
             <div class="emailPessoal">
                 <label>E-mail Pessoa (opcional):</label>
                 <input type="email" id="emailPessoal" class="inputTexto"/>

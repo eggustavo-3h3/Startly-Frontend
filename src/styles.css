@@ -14,6 +14,17 @@
       transition: background-color 0.3s ease;
       font-family: 'Jersey 10', sans-serif;
     }
+
+    .botaocadastro {
+      padding: 0.1rem 0.5rem;
+      font-size: 1.3rem;
+      background-color: #bcc7dd; 
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Jersey 10', sans-serif;
+    }
     
     .botoes:hover {
       background-color: #aab9d4;

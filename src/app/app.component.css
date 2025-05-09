@@ -1,6 +1,6 @@
 .fonte{
   font-family: "Jersey 10", serif;
-  font-size: 20px;
+  font-size: 25px;
   color: #333;
 }
 
@@ -12,6 +12,7 @@ nav {
   padding: 10px 20px;
 
 }
+
 
 ul {
   display: flex;
@@ -93,16 +94,6 @@ ul li a {
 .logo{
   width: 13%;
 }
-
-button{
-  background-color: #96acc4;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #030599;
-}
-
-
  /* footer */
 
  .footer{

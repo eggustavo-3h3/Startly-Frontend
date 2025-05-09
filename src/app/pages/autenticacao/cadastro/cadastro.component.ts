@@ -7,12 +7,14 @@ import { Startup } from '../../../models/startup.model';
 
 @Component({
   selector: 'app-cadastro',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
 export class CadastroComponent {
   formStartup! : FormGroup;
+  base64Image: string | null = null;
 
    constructor(    
     private authService: AuthService,
@@ -21,10 +23,11 @@ export class CadastroComponent {
     private startupService: startupService ) { }
 
     buildForm(){
+      console.log("buildForm...");
       this.formStartup = this.formBuilder.group(
         {
           nome: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
-          descricao: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(2000)]],
+          descricao: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(500)]],
           metas: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(3000)]],
           CNPJ: [null, [Validators.minLength(14), Validators.maxLength(14)]],
           cep: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
@@ -47,6 +50,24 @@ export class CadastroComponent {
           Contatos: [''] //chave estrangeira
         });     
     }
+
+    onFileSelected(event: Event): void {
+      const input = event.target as HTMLInputElement;
+      if (!input.files || input.files.length === 0) {
+        return;
+      }
+  
+      const file = input.files[0];
+      const reader = new FileReader();
+  
+      reader.onload = () => {
+        this.base64Image = reader.result as string;
+      };
+  
+      reader.readAsDataURL(file);
+    }
+
+    
 
     salvarStartup() {
       const dadosFormulario : Startup = this.formStartup.getRawValue();
