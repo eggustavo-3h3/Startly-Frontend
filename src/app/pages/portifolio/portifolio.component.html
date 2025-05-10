@@ -1,28 +1,37 @@
-
 <div class="portifolio fonte">
   <h1>Portifolio</h1>
 </div>
 
-<div class="pesquisa">
-
-  <input type="text" placeholder="Pesquisar" id="pesquisar" class="inputpesquisar" />
-  <i class="fa fa-search"></i>
-  <img src="list.png" class="menu">
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+          <form class="d-flex">
+              <div class="input-group">
+                  <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-primary px-4" type="submit">
+                          <img src="Lupa.png" alt="" class = "lupa">
+                      </button>
+              </div>
+          </form>
+      </div>
+  </div>
 </div>
 
 <main>
+
   <div class="card-container">
     <div class="card" *ngFor="let startup of startups$ | async">
       <div class="top">
         <div class="logo">
-          <img [src]='getLogo(startup)' alt="">
+          <img [src]='getLogo(startup)' alt=""> 
           <h1 class="fonte">{{ startup.nome }}</h1>
         </div>
-               
-        <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
+        <div class="TagLadoLado">
+          <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
+        </div>
       </div>
       <div class="bottom">
-        <p class="fonte">{{ startup.descricao }}</p>
+        <p class="fonte tamanho">{{ startup.descricao }}</p>
         <a href="#" class="button">Sobre</a>
       </div>
     </div>

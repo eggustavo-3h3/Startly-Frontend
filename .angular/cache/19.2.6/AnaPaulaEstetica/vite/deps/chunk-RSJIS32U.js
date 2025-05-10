@@ -1,4 +1,7 @@
 import {
+  BidiModule
+} from "./chunk-IEBG32JL.js";
+import {
   _CdkPrivateStyleLoader,
   _bindEventWithOptions
 } from "./chunk-BAADMDQM.js";
@@ -6,10 +9,7 @@ import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-BJU7FVL4.js";
-import {
-  BidiModule
-} from "./chunk-IEBG32JL.js";
+} from "./chunk-BMUSQEZ7.js";
 import {
   DOCUMENT
 } from "./chunk-XZ75XUJI.js";
@@ -3118,9 +3118,6 @@ var MatCommonModule = class _MatCommonModule {
 })();
 
 export {
-  coerceArray,
-  normalizePassiveListenerOptions,
-  _getEventTarget,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   ENTER,
@@ -3130,7 +3127,10 @@ export {
   UP_ARROW,
   RIGHT_ARROW,
   DOWN_ARROW,
+  _getEventTarget,
+  normalizePassiveListenerOptions,
   FocusMonitor,
+  coerceArray,
   BreakpointObserver,
   ObserversModule,
   LiveAnnouncer,
@@ -3139,4 +3139,4 @@ export {
   FocusKeyManager,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-4NRUON65.js.map
+//# sourceMappingURL=chunk-RSJIS32U.js.map

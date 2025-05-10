@@ -7,6 +7,7 @@ import { atuacaoService } from '../../services/atuacao.service';
 import { Atuacao } from '../../models/atuacoes.model';
 import { EnumTipoImagem } from '../../models/imagem.model';
 
+
 @Component({
   selector: 'app-portifolio',
   imports: [CommonModule],

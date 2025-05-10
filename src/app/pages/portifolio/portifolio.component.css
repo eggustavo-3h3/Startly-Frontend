@@ -5,17 +5,28 @@
     padding-left: 2%;
 
   }
+
   .menu{
     height: 20px;
     float: right;
     padding-right: 1%;
   }
-
+ .tamanho{
+   font-size: 1.7dvh;
+ }
   .logo-image {
     max-width: 100px;
     max-height: 100px;
     object-fit: contain;
     margin-bottom: 10px;
+  }
+  .TagLadoLado{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+  }
+  .lupa{
+    width: 2vh;
   }
 
   .inputpesquisar{
