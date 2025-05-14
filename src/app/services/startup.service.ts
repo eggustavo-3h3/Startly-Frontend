@@ -33,7 +33,7 @@ export class startupService{
         // Método para atualizar uma startup existente
         return this.http.put<Startup[]>(`${this.url}/startup/atualizar`, startup)
     }
-    removerStartup(id: number) : Observable<Startup[]> {
+    removerStartup(id: string) : Observable<Startup[]> {
         // Método para remover uma startup
         return this.http.delete<Startup[]>(`${this.url}/startup/remover/${id}`)
     }

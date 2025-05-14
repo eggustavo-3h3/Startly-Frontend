@@ -1,4 +1,3 @@
-
 .startup{
     display: flex;
     flex-direction: column;
@@ -65,4 +64,30 @@ input{
   p{
     margin-top: 2vh;
   }
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .perfil-container {
+    padding: 10px;
+  }
+
+  .perfil-header {
+    text-align: center;
+  }
+
+  .perfil-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .campos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .esquerda, .direita {
+    width: 100%;
+    margin: 0;
+  }
+}
 

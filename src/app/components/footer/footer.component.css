@@ -203,3 +203,17 @@
   .footer form button   { float: none; }
  
  }
+
+ /* Responsividade geral */
+ @media (max-width: 768px) {
+  .footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer .left, .footer .right {
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+}

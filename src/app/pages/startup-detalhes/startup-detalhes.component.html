@@ -1,0 +1,61 @@
+<header>
+    <img [src]='getLogo(startup)' alt="" srcset="">
+    <br />
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/neerds"
+        target="_blank">https://www.linkedin.com/company/neerds</a><br />
+    <strong>Website:</strong> <a href="https://www.neerds.com.br/servicos"
+        target="_blank">www.neerds.com.br/servicos</a>
+</header>
+
+<div class="carousel">
+    <div class="carousel-images" id="carousel-images">
+
+    </div>
+    <div class="carousel-item">
+        <img src="..." alt="...">
+    </div>
+</div>
+
+  <div class="container">
+    <div class="card descricao">
+      <h2>Descrição:</h2>
+      <p>{{startup.descricao}}</p>
+    </div>
+
+    <div class="card objetivos">
+      <h2>Objetivos:</h2>
+      <ul>
+        <li>{{startup.metas}}</li>
+      </ul>
+    </div>
+
+    <div class="card metas">
+      <h2>Metas:</h2>
+      <ul>
+        <li>
+          Expandir para novos mercados e regiões, com a meta de atender clientes
+          em 3 novos estados ou países até o final do próximo ano;
+        </li>
+        <li>
+          Ampliar a rede de parceiros estratégicos para oferecer mais soluções
+          aos clientes;
+        </li>
+        <li>
+          Oferecer treinamentos mensais sobre temas essenciais para startups,
+          como financiamento, marketing digital e gestão de equipes,
+          alcançando 200 participantes por evento.
+        </li>
+      </ul>
+    </div>
+
+    <div class="card area">
+      <h2>Área e Tipos de Clientes</h2>
+      <p>
+        Somos uma empresa que oferece soluções inovadoras para clientes
+        {{startup.EnumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
+        cada mercado, impulsionamos a transformação digital global.
+      </p>
+    </div>
+  </div>
+
+<button class="button">Entre em Contato</button>

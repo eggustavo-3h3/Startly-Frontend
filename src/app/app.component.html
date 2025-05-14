@@ -1,72 +1,71 @@
 <app-base-ui>
   <router-outlet>
 
-    <nav class="centro">
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <ul class="fonte centro">
-        <img class="logo" src="logo.png" alt="logo">
-        <li><a class="active" href="/">Início  </a></li>
-        <li><a href="#o-que-sao-startups">O que são Startups?</a></li>
-        <li><a href="/portifolio">Portifólio</a></li>
-        <li><a href="#sobre">Sobre</a></li>
 
-      </ul>
+<header class="navbar fonte">
+  <div class="logo">
+    <a href="/"><img class="logo" src="logo.png" alt="logo" /></a>
+  </div>
 
-      <div class="profile">
-        <a routerLink="/cadastro"><button class="botaocadastro">Cadastrar-Se</button></a>
-      </div>
-    </nav>
+  <!-- Botão Hamburguer e checkbox -->
+  <input type="checkbox" id="check" />
+  <label for="check" class="checkbtn"></label>
 
-    <br><br>
+  <nav class="menu">
+    <a href="/">Início</a>
+    <a href="#o-que-sao-startups">O que são Startups?</a>
+    <a href="/portifolio">Portfólio</a>
+    <a href="Sobre">Sobre</a>
+  </nav>
 
-  
+  <div class="actions">
+    <a href="/cadastro" class="btn register">Cadastrar-se</a>
+    <a href="/login" class="btn login">Logar</a>
+  </div>
+</header>
+
+    
+
+    <br /><br />
   </router-outlet>
 
   <footer class="footer">
-
     <div class="left">
-
       <h4 class="title-footer">Menu</h4>
 
       <p class="links">
-
         <a href="/" title="Home">Início</a>
         <a href="#o-que-sao-startups" title="Html">O que são startups?</a>
         <a href="/portifolio" title="Css">Portifólio</a>
         <a href="#sobre" title="jQuery">Sobre</a>
-
       </p>
 
       <div class="footer-icons">
-
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          ><i class="fa fa-facebook"></i
+        ></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          ><i class="fa fa-instagram"></i
+        ></a>
         <a href="#"><i class="fa fa-pinterest"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
-
       </div>
 
-      <p class="Copyright">Copyright &copy; 2025 Seu site - Todos os Direitos Reservados.</p>
-
-
-    </div><!--Left-->
+      <p class="Copyright">
+        Copyright &copy; 2025 Seu site - Todos os Direitos Reservados.
+      </p>
+    </div>
+    <!--Left-->
 
     <div class="right">
-
       <h4 class="title-footer fonte">Contate-nos</h4>
 
       <form action="#" method="post">
-
         <p>+55 (16)99325-3540</p>
-        <br>
+        <br />
         <p>startly&#64;gmail.com</p>
-
       </form>
-
-    </div><!--Right-->
-
+    </div>
+    <!--Right-->
   </footer>
 </app-base-ui>

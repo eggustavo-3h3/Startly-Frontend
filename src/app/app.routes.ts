@@ -8,6 +8,7 @@ import { PoliticaComponent } from './pages/politica/politica.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroComponent } from './pages/autenticacao/cadastro/cadastro.component';
 import { AuthGuard } from './guards/auth.guard';
+import { StartupDetalhesComponent } from './pages/startup-detalhes/startup-detalhes.component';
 
 export const routes: Routes = [
 
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'politica', component: PoliticaComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'cadastro', component: CadastroComponent},
+  { path: 'startup/:id', component: StartupDetalhesComponent},
   
 ];

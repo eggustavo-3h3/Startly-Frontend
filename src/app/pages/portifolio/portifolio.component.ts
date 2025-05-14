@@ -6,20 +6,24 @@ import { Observable } from 'rxjs';
 import { atuacaoService } from '../../services/atuacao.service';
 import { Atuacao } from '../../models/atuacoes.model';
 import { EnumTipoImagem } from '../../models/imagem.model';
+import { TruncatePipe } from '../../Pipes/truncate.pipe';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-portifolio',
-  imports: [CommonModule],
-  standalone: true,
   templateUrl: './portifolio.component.html',
-  styleUrl: './portifolio.component.css'
+  styleUrls: ['./portifolio.component.css'],
+  standalone: true,
+  imports: [CommonModule, TruncatePipe, FormsModule, RouterModule],
 })
 export class PortifolioComponent {
-
-
+  //Atributos
   startups$ = new Observable<Startup[]>();
   atuacoes$ = new Observable<Atuacao[]>();
+
 
   listarStartups() {
     this.startups$ = this.startupService.listarStartups();
@@ -34,6 +38,7 @@ export class PortifolioComponent {
     this.listarAtuacao();
   }
 
+
   getLogo(startup: Startup) {
     const img = startup.imagens.find(img => img.tipoImagem == EnumTipoImagem.Logo);
     return img ? `data:image/jpg;base64,${img.imagem}` : null;
@@ -42,25 +47,6 @@ export class PortifolioComponent {
   //Metodo para trazer as imagens do tipo propaganda para o carrosel no perfil
   getCarrosselImagens(startup: Startup) {
     return startup.imagens.filter(img => img.tipoImagem == EnumTipoImagem.Propaganda).map(img => `data:image/jpg;base64,${img.imagem}`);
-  }
-
-  //Transformar Imagem em texto e Vice Versa
-  base64Image: string | null = null;
-
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (!input.files || input.files.length === 0) {
-      return;
-    }
-
-    const file = input.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      this.base64Image = reader.result as string;
-    };
-
-    reader.readAsDataURL(file);
   }
 
 }

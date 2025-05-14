@@ -41,14 +41,14 @@ export class LoginComponent {
         this.snackBar.open(
           "Login realizado com sucesso!",
           "Fechar",
-          {duration: 3000}
+          {duration: 1000}
         );
       },
       error:() => {
         this.snackBar.open(
           "Credenciais inválidas!",
           "Fechar",
-          {duration: 3000}
+          {duration: 1000}
         );
       }
 

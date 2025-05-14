@@ -1,26 +1,39 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { startupService } from '../../../services/startup.service';
 import { Startup } from '../../../models/startup.model';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { Atuacao } from '../../../models/atuacoes.model';
+import { Observable } from 'rxjs';
+import { atuacaoService } from '../../../services/atuacao.service';
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule, MatDialogModule, MatIconModule, MatInputModule, MatButtonModule, CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
 export class CadastroComponent {
   formStartup! : FormGroup;
   base64Image: string | null = null;
+  atuacoes = new Observable<Atuacao[]>();
 
    constructor(    
-    private authService: AuthService,
-    private route: Router,
-    private formBuilder: FormBuilder,
-    private startupService: startupService ) { }
+    private authService: AuthService, private route: Router, private formBuilder: FormBuilder, private startupService: startupService, private atuacaoService : atuacaoService )
+     { 
+      this.listarAtuacoes();
+     }
+
+    listarAtuacoes(){
+      this.atuacoes = this.atuacaoService.listarAtuacoes();
+    }
 
     buildForm(){
       console.log("buildForm...");
@@ -29,25 +42,25 @@ export class CadastroComponent {
           nome: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
           descricao: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(500)]],
           metas: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(3000)]],
-          CNPJ: [null, [Validators.minLength(14), Validators.maxLength(14)]],
+          cnpj: [null, [Validators.minLength(14), Validators.maxLength(14)]],
           cep: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
           logradouro: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
           numero: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
           bairro: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
           municipio: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
-          UF: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(2)]],
+          uf: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(2)]],
           siteStartup: [null, [ Validators.minLength(0), Validators.maxLength(250)]],
           quantidadeFuncionario: [null, [Validators.required]],
-          tipoAtendimento: [''], //é enum não sei como fazer
-          ticket: [0],//é enum não sei como fazer
+          tipoAtendimento: [null], 
+          ticket: [null],
           responsavelCadastro: [null, [ Validators.minLength(0), Validators.maxLength(100)]],
-          Login: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(30)]], 
+          login: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(30)]], 
           senha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]], 
           confirmarSenha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
-          atuacoes: [''],//chave estrangeira
-          Imagens: [''],//chave estrangeira
-          videos: [''],//chave estrangeira
-          Contatos: [''] //chave estrangeira
+          atuacoes: [null],
+          imagens: [null],
+          videos: [null],
+          contatos: [null] 
         });     
     }
 

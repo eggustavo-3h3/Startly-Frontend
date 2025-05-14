@@ -86,4 +86,14 @@
     font-size: 14px;
     line-height: 1.5;
   }
-  
+
+@media (max-width: 768px) {
+  .boxes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .column-left, .column-right {
+    width: 100%;
+    margin: 0;
+  }
+}
