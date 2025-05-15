@@ -152,3 +152,12 @@ p{
     width: 100%;
   }
 }
+
+
+
+.texto-com-ellipsis {
+  height: 250px;  
+  white-space: normal; /* Impede quebra de linha */
+  overflow: hidden; /* Oculta o excesso de texto */
+  text-overflow: ellipsis; /* Adiciona reticências no final */
+}

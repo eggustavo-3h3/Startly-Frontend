@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="bottom">
-        <p class="fonte tamanho">{{ startup.descricao | Truncate:150  }}</p>
+        <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}</p>
         <a [routerLink]="['/startup', startup.id]" class="button">Sobre</a>
       </div>
     </div>

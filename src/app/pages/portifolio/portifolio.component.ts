@@ -24,9 +24,21 @@ export class PortifolioComponent {
   startups$ = new Observable<Startup[]>();
   atuacoes$ = new Observable<Atuacao[]>();
 
-
   listarStartups() {
     this.startups$ = this.startupService.listarStartups();
+
+    //Exemplo para tratar retorno do HttpClient
+    // this.startups$ = this.startupService.listarStartups().subscribe({
+    //   next: (response) => {
+
+    //   },
+    //   error: (err) => {
+
+    //   },
+    //   complete: () => {
+
+    //   }
+    // })
   }
 
   listarAtuacao() {
