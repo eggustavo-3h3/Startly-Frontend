@@ -1,10 +1,4 @@
 import {
-  MatRipple,
-  MatRippleModule,
-  _StructuralStylesLoader
-} from "./chunk-2AHHAAQG.js";
-import "./chunk-6PDOZB37.js";
-import {
   DomPortalOutlet,
   Overlay,
   OverlayConfig,
@@ -14,7 +8,13 @@ import {
 import {
   CdkScrollableModule
 } from "./chunk-MXTHBTPH.js";
+import {
+  MatRipple,
+  MatRippleModule,
+  _StructuralStylesLoader
+} from "./chunk-2AHHAAQG.js";
 import "./chunk-SVVIGFXE.js";
+import "./chunk-6PDOZB37.js";
 import "./chunk-OHWI2S6G.js";
 import "./chunk-IJ3KGSPX.js";
 import {

@@ -16,10 +16,10 @@ export const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'sobre', component: SobreComponent },
   { path: 'startup', component: StartupComponent },
-  { path: 'portifolio', component: PortifolioComponent, canActivate: [AuthGuard] },
+  { path: 'portifolio', component: PortifolioComponent },
   { path: 'politica', component: PoliticaComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'cadastro', component: CadastroComponent},
+  { path: 'cadastro', component: CadastroComponent, canActivate: [AuthGuard]},
   { path: 'startup/:id', component: StartupDetalhesComponent},
   
 ];

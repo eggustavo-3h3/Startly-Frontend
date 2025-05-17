@@ -68,3 +68,54 @@ body {
     a:hover {
       text-decoration: underline;
     }
+
+     /* carousel  */
+
+     .carousel {
+      position: relative;
+      width: 65%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    
+    .carousel-image {
+      width: 100%;
+      display: block;
+    }
+    
+    .btn {
+      position: absolute;
+      top: 0;
+      height: 100%;       /* ocupa altura total do carousel */
+      width: 50px;        /* define uma largura clicável, pode ajustar */
+      background: transparent;  /* transparente, invisível */
+      border: none;
+      color: transparent;       /* esconde o ícone/seta */
+      font-size: 0;             /* remove tamanho do texto */
+      cursor: pointer;          /* cursor de clique */
+      padding: 0;
+      user-select: none;
+    }
+    
+    .prev-btn {
+      left: 10px;
+    }
+    
+    .next-btn {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel {
+        max-width: 600px; /* menor no tablet */
+        padding-right: 3%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .carousel {
+        max-width: 320px; /* menor ainda no celular */
+      }
+    }
+    

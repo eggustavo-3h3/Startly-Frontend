@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { API_BASE_URL } from '../resources/util';
 import { Startup } from '../models/startup.model';
 import { Observable } from 'rxjs';
+import { NovaStartup } from '../models/nova-startup.model';
 
 @Injectable({
     providedIn: 'root'
@@ -24,9 +25,9 @@ export class startupService{
         return this.http.get<Startup[]>(`${this.url}/startup/obter/${id}`)
     }
     
-    adicionarStartup(startup: Startup) : Observable<Startup[]> {
+    adicionarStartup(startup: NovaStartup) : Observable<string> {
         // Método para adicionar uma nova startup
-        return this.http.post<Startup[]>(`${this.url}/startup/adicionar`, startup)
+        return this.http.post<string>(`${this.url}/startup/adicionar`, startup)
     }
     atualizarStartup(startup: Startup) : Observable<Startup[]> 
     {

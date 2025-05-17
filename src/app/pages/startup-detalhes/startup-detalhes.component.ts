@@ -30,5 +30,19 @@ export class StartupDetalhesComponent {
     return img ? `data:image/jpg;base64,${img.imagem}` : null;
   }
   
+   images = [
+    'https://picsum.photos/id/1015/900/500',
+    'https://picsum.photos/id/1016/900/500',
+    'https://picsum.photos/id/1018/900/500',
+  ];
 
+  currentIndex = 0;
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+  }
 }

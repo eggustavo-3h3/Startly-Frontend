@@ -45,10 +45,10 @@
     font-size: large;
     font-family: 'Jersey 10', sans-serif;
   }
-
+/* 
   input{
     height: 2vh;
- }
+ } */
 
 @media (max-width: 768px) {
   body {

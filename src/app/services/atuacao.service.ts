@@ -8,18 +8,18 @@ import { Atuacao } from "../models/atuacoes.model";
     providedIn: 'root'
 })
 
-export class atuacaoService {
+export class AtuacaoService {
     private url = API_BASE_URL;
 
     constructor (private http : HttpClient) {}
 
-    listarAtuacoes () :  Observable<Atuacao[]>{
-        //funcao para listar as atuacoes
+    //funcao para listar as atuacoes
+    listarAtuacoes () :  Observable<Atuacao[]>{        
         return this.http.get<Atuacao[]>(`${this.url}/atuacao/listar`)
     }
 
-    excluirAtuacao (id:number) : Observable<Atuacao[]> {
-        //funcao para excluir atuacao
+    //funcao para excluir atuacao
+    excluirAtuacao (id:number) : Observable<Atuacao[]> {        
         return this.http.delete<Atuacao[]>(`${this.url}/atuacao/remover${id}`)
     }
 }

@@ -3,10 +3,9 @@ import { Startup } from '../../models/startup.model';
 import { startupService } from '../../services/startup.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { atuacaoService } from '../../services/atuacao.service';
+import { AtuacaoService } from '../../services/atuacao.service';
 import { Atuacao } from '../../models/atuacoes.model';
 import { EnumTipoImagem } from '../../models/imagem.model';
-import { TruncatePipe } from '../../Pipes/truncate.pipe';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -17,7 +16,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './portifolio.component.html',
   styleUrls: ['./portifolio.component.css'],
   standalone: true,
-  imports: [CommonModule, TruncatePipe, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
 })
 export class PortifolioComponent {
   //Atributos
@@ -45,7 +44,7 @@ export class PortifolioComponent {
     this.atuacoes$ = this.atuacaoService.listarAtuacoes();
   }
 
-  constructor(private startupService: startupService, private atuacaoService: atuacaoService) {
+  constructor(private startupService: startupService, private atuacaoService: AtuacaoService) {
     this.listarStartups();
     this.listarAtuacao();
   }

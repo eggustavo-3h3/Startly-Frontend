@@ -17,7 +17,7 @@ export interface Startup {
     bairro: string,
     municipio: string,
     uf: string,
-    siteStartup?: string,
+    //siteStartup?: string,
     quantidadeFuncionario: number,
     tipoAtendimento: EnumTipoDeAtendimento[],
     ticket: EnumTicketMedio[],
