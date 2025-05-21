@@ -1,0 +1,23 @@
+Fazer o botão de menu aparecer na NavBar ao diminuir a tela []
+
+Conectar a API na tela de cadastro [ X ]
+
+Arrumar o layout da tela de Login []
+
+Na tela de portifolio, fazer a logo ficar no lugar do background azul dos cards []
+
+Ao logar, alterar os botões de cadastro e login para um icone de usuário que ao clicar irá descer um menu suspenso com as
+opções de Perfil e Sair, ao clicar no perfil iria abrir a página do perfil(já criada) com as informações da Startup []
+
+Deixar a tela de cadastro interativa []
+
+Redirecionar o link Sobre para a página correta [ X ]
+
+Retirar a função de ao abir a tela de Portifolio mostrar a tela de login [ X ]
+
+Terminar de adicionar as informações da tela que aparece as informações da startup ao clicar no botão Sobre(Potifolio) []
+
+Adicionar os Botões corretos de redes sociais no footer []
+
+
+

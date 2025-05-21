@@ -1,0 +1,144 @@
+<h1 class="startup">Cadastre-se</h1>
+
+<div>
+  <form [formGroup]="formStartup" (ngSubmit)="salvarStartup()">
+    <div class="campos fonte">
+      <div class="esquerda">
+        <div class="login">
+          <label>Login:</label>
+          <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" formControlName="login" class="inputTexto"
+            required />
+        </div>
+        
+
+        <div>
+          <div class="nome">
+            <label>Qual o nome da sua Startup?</label>
+            <input type="text" placeholder="Digite o nome da sua Startup" class="inputTexto"  formControlName="nome" required />
+          </div>
+        </div>
+
+        <div class="Descricao">
+
+          <label>Descreva sua Startup</label>
+          <input type="text" id="descricao" class="inputTexto" formControlName="descricao" required />
+        </div>
+
+        <div class="objetivo">
+          <label>Descreva os objetivos e metas da sua Startup:</label>
+          <input type="text" id="objetivo" class="inputTexto" required formControlName="metas" />
+        </div>
+
+        <div class="cnpj">
+          <label>CNPJ:</label>
+          <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" />
+        </div>
+
+        <div class="linkdln">
+          <label>Link do LinkedIn:</label>
+          <input type="text" id="linkdln" formControlName="siteStartup" class="inputTexto" />
+        </div>
+
+        <div class="telefone">
+          <label>Telefone:</label>
+          <input type="text" id="telefone" class="inputTexto" formControlName="telefone" required />
+        </div>
+
+        <div class="emailC">
+          <label>E-mail Corporativo:</label>
+          <input type="email" id="emailCorporativo" class="inputTexto" formControlName="emailCorporativo" required />
+        </div>
+        <div class="qtdFunc">
+          <label>Quantidade de Funcionários:</label>
+          <input type="number" id="qtdFunc" class="inputTexto" formControlName="quantidadeFuncionario" required />
+        </div>
+
+        <div class="areaAtuacao">
+          <label for="area">Área de Atuação:</label>
+          <app-area-atuacao (atuacaoSelecionada)="onAtuacaoSelecionada($event)"></app-area-atuacao>
+        </div>
+
+        <div class="logo">
+          <label>Logo:</label>
+          <div class="mb-3">
+            <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" />
+          </div>
+          <img [src]="logoBase64Image" alt="" />
+        </div>
+      </div>
+
+
+
+
+      <div class="direita">
+        <div class="tipoCliente">
+          <label>Tipo de Cliente</label>
+          <select formControlName="tipoCliente" required>
+            @for (tc of enumTipoCliente; track $index) {
+              <option [ngValue]="tc.id">{{ tc.descricao }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="ticket">
+          <label>Ticket Médio:</label>
+          <select formControlName="ticketMedio" required>
+            @for (tm of enumTicketMedio; track $index) {
+              <option [ngValue]="tm.id">{{ tm.descricao }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="respCadastro">
+          <label>Responsável pelo Cadastro:</label>
+          <input type="text" id="respCadastro" class="inputTexto" formControlName="responsavelCadastro" required />
+        </div>
+
+        <div class="emailPessoal">
+          <label>E-mail Pessoal (opcional):</label>
+          <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" />
+        </div>
+
+        <div class="cep">
+          <label>CEP:</label>
+          <input type="text" id="cep" class="inputTexto" formControlName="cep" required />
+        </div>
+
+        <div class="logradouro">
+          <label>Logradouro:</label>
+          <input type="text" id="logradouro" placeholder="Ex: Av. Felipe Amador Junior" class="inputTexto" formControlName="logradouro" required />
+        </div>
+
+        <div class="numero">
+          <label>Número da Residencia:</label>
+          <input type="number" id="numero" class="inputTexto" formControlName="numero" required />
+        </div>
+
+        <div class="estado">
+          <label>Municipio:</label>
+          <input type="text" id="municipio" class="inputTexto" formControlName="municipio" required />
+        </div>
+
+        <div class="senha">
+          <label>Senha:</label>
+          <input type="password" id="senha" class="inputTexto" formControlName="senha" required />
+        </div>
+
+        <div class="confirmarSenha">
+          <label>Confirmar Senha:</label>
+          <input type="password" id="confirmarSenha" class="inputTexto" formControlName="confirmarSenha" required />
+        </div>
+
+        <div class="imagens">
+          <label>Adicione imagens para facilitar a compreemsão dosinvestidores:</label>
+          <div class="mb-3">
+            <input class="form-control" formControlName="imagens" type="file" id="formFile" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="botao">
+      <button class="botaocadastro"  type="submit">Cadastrar</button>
+    </div>
+  </form>
+</div>

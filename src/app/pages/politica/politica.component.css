@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Jersey 10', sans-serif;
+
+  }
+    
+
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha horizontalmente */
+    min-height: 100vh; /* ocupa a altura toda da tela */
+    padding: 2rem;
+    font-size: 1.6rem;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Jersey 10', sans-serif;
+  }
+  
+  p {
+    margin-top: 1rem;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .listas {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  
+  h3 {
+    margin-top: 2vh;
+  }
+  
+  li {
+    margin-top: 1rem;
+  }
+
+  
