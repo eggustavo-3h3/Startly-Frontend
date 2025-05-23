@@ -6,9 +6,10 @@
       <div class="esquerda">
         <div class="login">
           <label>Login:</label>
-          <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" class="inputTexto"
+          <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" formControlName="login" class="inputTexto"
             required />
         </div>
+        
 
         <div>
           <div class="nome">
@@ -33,20 +34,20 @@
           <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" />
         </div>
 
-        <!-- <div class="linkdln">
+        <div class="linkdln">
           <label>Link do LinkedIn:</label>
-          <input type="text" id="linkdln" formControlName="siteStartups" class="inputTexto" />
-        </div> -->
+          <input type="text" id="linkdln" formControlName="siteStartup" class="inputTexto" />
+        </div>
 
-        <!-- <div class="telefone">
+        <div class="telefone">
           <label>Telefone:</label>
           <input type="text" id="telefone" class="inputTexto" formControlName="telefone" required />
-        </div> -->
+        </div>
 
-        <!-- <div class="emailC">
+        <div class="emailC">
           <label>E-mail Corporativo:</label>
-          <input type="email" id="emailC" class="inputTexto" formControlName="emailCorporativo"w required />
-        </div> -->
+          <input type="email" id="emailCorporativo" class="inputTexto" formControlName="emailCorporativo" required />
+        </div>
         <div class="qtdFunc">
           <label>Quantidade de Funcionários:</label>
           <input type="number" id="qtdFunc" class="inputTexto" formControlName="quantidadeFuncionario" required />
@@ -66,22 +67,25 @@
         </div>
       </div>
 
+
+
+
       <div class="direita">
         <div class="tipoCliente">
           <label>Tipo de Cliente</label>
-          <select [(ngModel)]="tipoCliente" id="tipoCliente" required>
-            <option ngValue="Estadual">Estadual</option>
-            <option ngValue="Nacional">Nacional</option>
-            <option ngValue="Internacional">Internacional</option>
+          <select formControlName="tipoCliente" required>
+            @for (tc of enumTipoCliente; track $index) {
+              <option [ngValue]="tc.id">{{ tc.descricao }}</option>
+            }
           </select>
         </div>
 
         <div class="ticket">
           <label>Ticket Médio:</label>
-          <select [(ngModel)]="ticketMedio" id="ticket" required>
-            <option ngValue="DezQuarentaNove">10 a 49</option>
-            <option ngValue="CinquentaNoventaNove">50 a 99</option>
-            <option ngValue="CemMais">100+</option>
+          <select formControlName="ticketMedio" required>
+            @for (tm of enumTicketMedio; track $index) {
+              <option [ngValue]="tm.id">{{ tm.descricao }}</option>
+            }
           </select>
         </div>
 

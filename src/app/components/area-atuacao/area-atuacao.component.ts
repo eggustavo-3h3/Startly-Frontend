@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-area-atuacao',
   imports: [FormsModule, CommonModule],
+  standalone: true,
   templateUrl: './area-atuacao.component.html',
   styleUrl: './area-atuacao.component.css'
 })
