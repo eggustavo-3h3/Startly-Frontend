@@ -92,7 +92,7 @@ export class CadastroComponent implements OnInit {
         confirmarSenha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
         atuacoes: [null],
         imagens: [null],
-        videos: [null],
+        // videos: [null],
         contatos: [null]
       });
   }
