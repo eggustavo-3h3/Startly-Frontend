@@ -5,7 +5,7 @@ import {
 } from "./chunk-MXTHBTPH.js";
 import {
   coerceCssPixelValue
-} from "./chunk-SVVIGFXE.js";
+} from "./chunk-ZOCN33SA.js";
 import {
   _isTestEnvironment
 } from "./chunk-OHWI2S6G.js";
@@ -3458,4 +3458,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-P7GRBER7.js.map
+//# sourceMappingURL=chunk-2XGDAL6V.js.map

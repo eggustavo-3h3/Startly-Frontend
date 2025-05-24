@@ -12,7 +12,7 @@ function coerceCssPixelValue(value) {
 }
 
 export {
-  coerceBooleanProperty,
-  coerceCssPixelValue
+  coerceCssPixelValue,
+  coerceBooleanProperty
 };
-//# sourceMappingURL=chunk-SVVIGFXE.js.map
+//# sourceMappingURL=chunk-ZOCN33SA.js.map
