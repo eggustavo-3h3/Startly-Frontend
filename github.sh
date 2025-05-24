@@ -2,7 +2,7 @@
 
 #Altere as variáveis abaixo de acordo com a sua necessidade
 #na variável repositório, prefira a url do repositório baseada em https para nao termos que configurar SSH
-export name='Caio Bononi'
+export name='CaioBononi'
 export email="caiobononip@gmail.com"
 export repositorio="https://github.com/eggustavo-3h3/Startly-Frontend.git";
 
@@ -13,4 +13,4 @@ git config --global user.email $email
 git add .
 git commit -am "código produzido no encontro do dia $(date)"
 
-git push origin main
+git push origin main'

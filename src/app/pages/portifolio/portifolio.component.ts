@@ -40,6 +40,13 @@ export class PortifolioComponent {
     // })
   }
 
+  searchTerm: string = '';
+
+onSearch() {
+  console.log('Termo de busca:', this.searchTerm);
+  // Faça a lógica de busca aqui (chamada a API, filtro de lista, etc)
+}
+
   listarAtuacao() {
     this.atuacoes$ = this.atuacaoService.listarAtuacoes();
   }

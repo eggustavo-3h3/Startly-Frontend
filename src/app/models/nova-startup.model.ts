@@ -1,13 +1,14 @@
 import { EnumTipoImagem } from "./imagem.model";
 export interface NovaStartup {
+    login: string;
     nome: string;
     descricao: string;
     metas: string;
     cnpj: string;
+    telefone: string;
+    siteStartup: string;
     cep: string;
-    //telefone: string;
-     emailCorporativo: string;
-    //siteStartup: string;
+    emailCorporativo: string;
     emailPessoal: string;
     quantidadeFuncionario: string;
     responsavelCadastro: string;
@@ -15,11 +16,10 @@ export interface NovaStartup {
     numero: string;
     municipio: string;
     senha: string;
-    ticketMedio: string;
-    tipoCliente: string;
     confirmarSenha: string;
     atuacoes: NovaStartupAtuacao[];
     imagens: NovaStartupImagem[];
+   
 
 
 }

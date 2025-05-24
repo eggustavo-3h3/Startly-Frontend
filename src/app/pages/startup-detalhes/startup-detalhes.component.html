@@ -1,9 +1,10 @@
 <div class="carousel">
-  <img [src]="images[currentIndex]" alt="Imagem do carousel" class="carousel-image" />
+  <img [src]='getCarrosselImagens(startup)' alt="Imagem do carousel" srcset="" class="carousel-image" />
   
-  <button (click)="prev()" class="btn prev-btn">&#10094;</button>
-  <button (click)="next()" class="btn next-btn">&#10095;</button>
+  <!-- <button (click)="prev()" class="btn prev-btn">&#10094;</button>
+  <button (click)="next()" class="btn next-btn">&#10095;</button> -->
 </div>
+
 
 <header>
     <img [src]='getLogo(startup)' alt="" srcset=""><!-- Para colocar o carrosel é a mema bosta-->

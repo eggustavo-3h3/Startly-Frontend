@@ -2,29 +2,37 @@
   <router-outlet>
 
 
-<header class="navbar fonte">
-  <div class="logo">
-    <a href="/"><img class="logo" src="logo.png" alt="logo" /></a>
-  </div>
+    <header class="navbar fonte">
+      <div class="logo">
+        <a href="/"><img class="logo" src="logo.png" alt="logo" /></a>
+      </div>
 
-  <!-- Botão Hamburguer e checkbox -->
-  <input type="checkbox" id="check" />
-  <label for="check" class="checkbtn"></label>
+      <!-- Botão Hamburguer e checkbox -->
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn"></label>
 
-  <nav class="menu">
-    <a href="/">Início</a>
-    <a href="#o-que-sao-startups">O que são Startups?</a>
-    <a href="/portifolio">Portfólio</a>
-    <a href="#sobre">Sobre</a>
-  </nav>
+      <nav class="menu">
+        <a href="/">Início</a>
+        <a href="#o-que-sao-startups">O que são Startups?</a>
+        <a href="/portifolio">Portfólio</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
 
-  <div class="actions">
-    <a href="/cadastro" class="btn register">Cadastrar-se</a>
-    <a href="/login" class="btn login">Logar</a>
-  </div>
-</header>
+      <div *ngIf="!this.authService.isAuthenticated(); else loggedIn">
+        <div class="actions">
+          <a href="/cadastro" class="btn register">Cadastrar-se</a>
+          <a href="/login" class="btn login">Logar</a>
+        </div>
+      </div>
 
-    
+      <ng-template #loggedIn>
+        <div class="avatar">
+          area logada
+        </div>
+      </ng-template>
+    </header>
+
+
 
     <br /><br />
   </router-outlet>
@@ -41,19 +49,12 @@
       </p>
 
       <div class="footer-icons">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          ><i class="fa fa-facebook"></i
-        ></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          ><i class="fa fa-instagram"></i
-        ></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-instagram"></i></a>
         <a href="#"><i class="fa fa-pinterest"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
       </div>
 
-      <p class="Copyright">
-        Copyright &copy; 2025 Seu site - Todos os Direitos Reservados.
-      </p>
     </div>
     <!--Left-->
 
