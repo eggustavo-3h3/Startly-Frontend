@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
-import { API_BASE_URL } from "../resources/util";
 import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { environment } from "../../environments/environment";
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService{
-    private authUrl = `${API_BASE_URL}/autenticar`;
+    private baseUrl = environment.apiUrl;
 
     private tokenSubject = new BehaviorSubject<string | null>(
        localStorage.getItem('token')
@@ -19,7 +19,7 @@ export class AuthService{
 
     login(username: string, password: string): Observable<string>{
         return new Observable(observable =>{
-            this.http.post<string>(this.authUrl,{
+            this.http.post<string>(`${this.baseUrl}/authUrl`,{
                 login: username,
                 senha: password
             }).subscribe({
@@ -35,9 +35,7 @@ export class AuthService{
                     observable.complete();
                 }
             });
-
         });
-
     }
 
     logout(){
