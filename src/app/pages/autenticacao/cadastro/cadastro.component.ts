@@ -39,7 +39,7 @@ export class CadastroComponent implements OnInit {
     { id: 3, descricao: '100+' }
   ]
 
-  enumTipoCliente = [
+  enumTipoAtendimento = [
     { id: 1, descricao: 'Estadual' },
     { id: 2, descricao: 'Nacional' },
     { id: 3, descricao: 'Internacional' }
@@ -74,17 +74,17 @@ export class CadastroComponent implements OnInit {
         metas: [null, [Validators.required, Validators.minLength(100), Validators.maxLength(3000)]],
         cnpj: [null, [Validators.minLength(14), Validators.maxLength(14)]],
         cep: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-        logradouro: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
+        logradouro: [null, [Validators.required, Validators.maxLength(100)]],
         numero: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
-        bairro: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
+        bairro: [null, [Validators.required, Validators.maxLength(100)]],
         municipio: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
-        uf: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(2)]],
-        siteStartup: [null, [Validators.minLength(0), Validators.maxLength(250)]],
+        uf: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
+        siteStartup: [null, [Validators.maxLength(250)]],
         quantidadeFuncionario: [null, [Validators.required]],
         emailPessoal: [null, [Validators.required]], //adicionei esse
         emailCorporativo: [null, [Validators.required]], //adicionei esse
         telefone: [null, [Validators.required]], //adicionei esse
-        tipoCliente: [null],
+        tipoAtendimento: [null],
         ticketMedio: [null],
         responsavelCadastro: [null, [Validators.minLength(0), Validators.maxLength(100)]],
         login: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(30)]],
@@ -117,9 +117,7 @@ export class CadastroComponent implements OnInit {
   onFileSelectedPropaganda(event: Event): void {
     const files = (event.target as HTMLInputElement).files;
     if (files) {
-      console.clear();
       Array.from(files).forEach((file) => {
-        console.log("file: ", file);
         const reader = new FileReader();
         reader.onload = () => {
           const imagemPropaganda = this.formBuilder.group({
@@ -133,7 +131,9 @@ export class CadastroComponent implements OnInit {
   }  
 
   salvarStartup() {
-    const dadosFormulario = this.formStartup.getRawValue() as Startup;
+    const dadosStartup = this.formStartup.getRawValue() as Startup;
+
+    console.log("dadosFormulario: ", dadosStartup);
 
     const startup = {
     //   login: this.formStartup.value.login, 
@@ -170,18 +170,18 @@ export class CadastroComponent implements OnInit {
     // console.clear();
     // console.log("novaStartup: ", JSON.stringify(startup, null, 2));
 
-    // this.startupService.adicionarStartup(startup).subscribe({
-    //   next: (startup: Startup[]) => {
-    //     this.route.navigate(['/startup/listar'])
-    //   },
-    //   error: (error) => {
-    //     console.error('Erro ao cadastrar startup:', error);
-    //   },
-    //   complete: () => {
-    //     console.log('Cadastro de startup concluído com sucesso!');
-    //   }
-
-    // });
+    this.startupService.adicionarStartup(dadosStartup).subscribe({
+      next: (response: string) => {
+        this.route.navigate(['/startup/listar'])
+        console.log('Startup cadastrada com sucesso:', response);
+        console.log('Cadastro de startup concluído com sucesso!');
+      },
+      error: (error) => {
+        console.error('Erro ao cadastrar startup:', error);
+      },
+      complete: () => {
+        console.log('Finalizado!');
+      }
+    });
   }
-
 }
