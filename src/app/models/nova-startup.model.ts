@@ -1,4 +1,3 @@
-import { EnumTipoImagem } from "./imagem.model";
 export interface NovaStartup {
     login: string;
     nome: string;
@@ -29,6 +28,5 @@ export interface NovaStartupAtuacao {
 }
 
 export interface NovaStartupImagem {
-    tipoImagem: EnumTipoImagem;
     imagem: string;
 }

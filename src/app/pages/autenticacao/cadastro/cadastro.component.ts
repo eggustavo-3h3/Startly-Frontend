@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { startupService } from '../../../services/startup.service';
@@ -14,7 +14,7 @@ import { Observable, expand } from 'rxjs';
 import { AtuacaoService } from '../../../services/atuacao.service';
 import { AreaAtuacaoComponent } from '../../../components/area-atuacao/area-atuacao.component';
 import { NovaStartup } from '../../../models/nova-startup.model';
-import { EnumTipoImagem } from '../../../models/imagem.model';
+import { StartupImagem } from '../../../models/imagem.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -90,37 +90,52 @@ export class CadastroComponent implements OnInit {
         login: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(30)]],
         senha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
         confirmarSenha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
+        logo: [null, [Validators.required]],
         atuacoes: [null],
-        imagens: [null],
+        imagens: this.formBuilder.array<StartupImagem>([]),
         // videos: [null],
         contatos: [null]
       });
   }
 
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (!input.files || input.files.length === 0) {
-      return;
-    }
-
-    const file = input.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      this.logoBase64Image = reader.result as string;
-    };
-
-    reader.readAsDataURL(file);
+  onFileSelectedLogo(event: Event): void {
+    const files = (event.target as HTMLInputElement).files;
+    if (files) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        //this.formStartup.get('imagens.imagem')?.setValue(reader.result as string); 
+        this.formStartup.get('logo')?.setValue(reader.result as string);
+      };
+      reader.readAsDataURL(files[0]);
+    }    
   }
 
+  get imagens() : FormArray {
+    return this.formStartup.get('imagens') as FormArray;
+  }  
 
+  onFileSelectedPropaganda(event: Event): void {
+    const files = (event.target as HTMLInputElement).files;
+    if (files) {
+      console.clear();
+      Array.from(files).forEach((file) => {
+        console.log("file: ", file);
+        const reader = new FileReader();
+        reader.onload = () => {
+          const imagemPropaganda = this.formBuilder.group({
+            imagem: reader.result as string
+          });
+          this.imagens.push(imagemPropaganda);
+        };
+        reader.readAsDataURL(file);
+      });
+    }    
+  }  
 
   salvarStartup() {
-    const dadosFormulario = this.formStartup.getRawValue();
+    const dadosFormulario = this.formStartup.getRawValue() as Startup;
 
-    console.log(dadosFormulario);
-
-     const startup = {
+    const startup = {
     //   login: this.formStartup.value.login, 
     //   nome: this.formStartup.value.nome,
     //   descricao: this.formStartup.value.descricao,

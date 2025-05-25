@@ -8,8 +8,7 @@
           <label>Login:</label>
           <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" formControlName="login" class="inputTexto"
             required />
-        </div>
-        
+        </div>        
 
         <div>
           <div class="nome">
@@ -61,14 +60,15 @@
         <div class="logo">
           <label>Logo:</label>
           <div class="mb-3">
-            <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" />
+            <input class="form-control" type="file" id="formFileLogo" (change)="onFileSelectedLogo($event)" />
           </div>
-          <img [src]="logoBase64Image" alt="" />
+          <!-- @if (formStartup.value?.imagens.imagem) { -->
+          @if (formStartup.value?.logo) {
+            <!-- <img [src]="formStartup.value?.imagens.imagem" alt="Logo" width="200" /> -->
+            <img [src]="formStartup.value?.logo" alt="Logo" width="200" />
+          }
         </div>
       </div>
-
-
-
 
       <div class="direita">
         <div class="tipoCliente">
@@ -140,11 +140,10 @@
           <input type="password" id="confirmarSenha" class="inputTexto" formControlName="confirmarSenha" required />
         </div>
 
-        <div class="imagens">
-          <label>Adicione imagens para facilitar a compreemsão dosinvestidores:</label>
-          <div class="mb-3">
-            <input class="form-control" formControlName="imagens" type="file" id="formFile" />
-          </div>
+        <div formArrayName="imagens">
+          @for (imageCtrl of imagens.controls; track $index) {
+            <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem Propaganda" width="200" />
+          }
         </div>
       </div>
     </div>

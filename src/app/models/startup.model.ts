@@ -23,9 +23,9 @@ export interface Startup {
     responsavelCadastro: string,
     login: string,
     senha: string,
+    logo: string
     atuacoes: Atuacao[],
     imagens : StartupImagem[],
     videos: StartupVideo[],
     contatos: StartupContatos[],
 }
-

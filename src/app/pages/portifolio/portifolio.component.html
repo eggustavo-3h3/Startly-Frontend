@@ -22,7 +22,7 @@
       <div class="top">
         <h1 class="fonte">{{ startup.nome }}</h1>
 
-          <img [src]='getLogo(startup)' alt=""> 
+          <img [src]='startup.logo' alt=""> 
        
         <div class="TagLadoLado">
           <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
@@ -42,5 +42,3 @@
 
   </div>
 </footer>
-<script defer src="../assets/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>

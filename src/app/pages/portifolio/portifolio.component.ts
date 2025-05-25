@@ -5,11 +5,8 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { AtuacaoService } from '../../services/atuacao.service';
 import { Atuacao } from '../../models/atuacoes.model';
-import { EnumTipoImagem } from '../../models/imagem.model';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-portifolio',
@@ -55,16 +52,4 @@ onSearch() {
     this.listarStartups();
     this.listarAtuacao();
   }
-
-
-  getLogo(startup: Startup) {
-    const img = startup.imagens.find(img => img.tipoImagem == EnumTipoImagem.Logo);
-    return img ? `data:image/jpg;base64,${img.imagem}` : null;
-  }
-   
-  //Metodo para trazer as imagens do tipo propaganda para o carrosel no perfil
-  getCarrosselImagens(startup: Startup) {
-    return startup.imagens.filter(img => img.tipoImagem == EnumTipoImagem.Propaganda).map(img => `data:image/jpg;base64,${img.imagem}`);
-  }
-
 }
