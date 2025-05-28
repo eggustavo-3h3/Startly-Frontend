@@ -15,9 +15,12 @@ export class StartupDetalhesComponent {
   constructor(private route: ActivatedRoute, private startupService: startupService) {}
 
   ngOnInit() {
+    
     const id = this.route.snapshot.paramMap.get('id');
     this.startupService.obterStartups(id).subscribe(data => {
+
       this.startup = data;
+      console.log(data)
     });
   }
 }

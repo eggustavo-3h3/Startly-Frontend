@@ -53,3 +53,163 @@ h1 {
 .botaocadastro:hover {
   background-color: #a1b0d2;
 }
+
+.areaAtuacao {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.areaAtuacao .atuacao-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+  justify-content: space-between;
+}
+
+.areaAtuacao app-area-atuacao {
+  flex: 1 1 0%;
+  width: 100%;
+}
+
+.areaAtuacao app-area-atuacao select {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  font-size: 15px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+/* botao adicionar */
+.areaAtuacao button {
+  background-color: #bcc7dd; 
+  height: 1.8rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+  align-self: flex-end;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.areaAtuacao button:hover {
+  background-color: #aab9d4;
+}
+
+.atuacoes-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.atuacoes-lista span {
+  background: #9daedb4b;
+  border-radius: 8px;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.atuacoes-lista button[type="botaoRemover"] {
+  background: none;
+  border: none;
+  color: #c00;
+  font-size: 16px;
+  margin-left: 4px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+@media (max-width: 900px) {
+  .campos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5vh;
+  }
+  .direita {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .esquerda {
+    max-width: 100%;
+  }
+  .areaAtuacao {
+    max-width: 100%;
+    width: 100%;
+  }
+  .areaAtuacao .atuacao-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .areaAtuacao app-area-atuacao {
+    flex: 1 1 0%;
+    width: 100%;
+  }
+  .areaAtuacao app-area-atuacao select {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .campos {
+    font-size: 1.1rem;
+    gap: 1vh;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .botaocadastro {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.7rem;
+    margin: 3vh auto 3vh;
+  }
+  .areaAtuacao {
+    max-width: 100%;
+    width: 100%;
+  }
+  .areaAtuacao app-area-atuacao {
+    flex: 1 1 0%;
+    width: 100%;
+  }
+  .areaAtuacao app-area-atuacao select {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    font-size: 1rem;
+  }
+  .areaAtuacao button {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    height: 2.2rem;
+  }
+  .atuacoes-lista span {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .campos {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .botaocadastro {
+    font-size: 0.9rem;
+    padding: 0.1rem 0.4rem;
+  }
+}

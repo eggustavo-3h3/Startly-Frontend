@@ -7,8 +7,8 @@ import { PortifolioComponent } from './pages/portifolio/portifolio.component';
 import { PoliticaComponent } from './pages/politica/politica.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroComponent } from './pages/autenticacao/cadastro/cadastro.component';
-import { AuthGuard } from './guards/auth.guard';
 import { StartupDetalhesComponent } from './pages/startup-detalhes/startup-detalhes.component';
+import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 
 export const routes: Routes = [
 
@@ -21,4 +21,5 @@ export const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'cadastro', component: CadastroComponent }, //canActivate: [AuthGuard]},
   { path: 'startup/:id', component: StartupDetalhesComponent},  
+  { path: 'esqueci-senha', component: EsqueciSenhaComponent }, 
 ];

@@ -45,6 +45,9 @@ export class CadastroComponent implements OnInit {
     { id: 3, descricao: 'Internacional' }
   ]
 
+  atuacoesSelecionadas: Atuacao[] = [];
+  atuacaoSelecionadaAdicionar: string | null = null;
+
   constructor(
     private authService: AuthService, 
     private route: Router, 
@@ -61,8 +64,22 @@ export class CadastroComponent implements OnInit {
     });
   }
 
+  adicionarAtuacao() {
+    if (this.atuacaoSelecionadaAdicionar) {
+      const atuacao = this.atuacoes.find(a => a.id === this.atuacaoSelecionadaAdicionar);
+      if (atuacao && !this.atuacoesSelecionadas.some(a => a.id === atuacao.id)) {
+        this.atuacoesSelecionadas.push(atuacao);
+      }
+      this.atuacaoSelecionadaAdicionar = null;
+    }
+  }
+
+  removerAtuacao(index: number) {
+    this.atuacoesSelecionadas.splice(index, 1);
+  }
+
   onAtuacaoSelecionada(id: string) {
-    this.areaAtuacaoId = id;
+    this.atuacaoSelecionadaAdicionar = id;
   }
 
   buildForm() {
@@ -166,6 +183,9 @@ export class CadastroComponent implements OnInit {
     //     }
     //   ]
      };
+
+    // Corrige para o tipo esperado no model NovaStartup
+    (dadosStartup as any).atuacoes = this.atuacoesSelecionadas.map(a => ({ atuacaoId: a.id }));
 
     // console.clear();
     // console.log("novaStartup: ", JSON.stringify(startup, null, 2));

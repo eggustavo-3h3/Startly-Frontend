@@ -54,7 +54,15 @@
 
         <div class="areaAtuacao">
           <label for="area">Área de Atuação:</label>
-          <app-area-atuacao (atuacaoSelecionada)="onAtuacaoSelecionada($event)"></app-area-atuacao>
+          <div class="atuacao-row">
+            <app-area-atuacao (atuacaoSelecionada)="atuacaoSelecionadaAdicionar = $event"></app-area-atuacao>
+            <button type="button" class ='adicionar' (click)="adicionarAtuacao()">Adicionar</button>
+          </div>
+          <div *ngIf="atuacoesSelecionadas.length > 0" class="atuacoes-lista">
+            <span *ngFor="let atuacao of atuacoesSelecionadas; let i = index">
+              {{ atuacao.descricao }} <button type="botaoRemover" (click)="removerAtuacao(i)">X</button>
+            </span>
+          </div>
         </div>
 
         <div class="logo">
