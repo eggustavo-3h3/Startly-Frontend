@@ -8,6 +8,9 @@
   font-size: 1.5rem;
 }
 
+.highlight {
+  color: #1e3a8a;
+}
 
 .campos .direita,
 .esquerda {
@@ -129,6 +132,45 @@ h1 {
   cursor: pointer;
   padding: 0 4px;
 }
+
+ /* carousel  */
+
+ .carousel {
+  position: relative;
+  width: 65%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-image {
+  width: 100%;
+  display: block;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  height: 100%;       /* ocupa altura total do carousel */
+  width: 50px;        /* define uma largura clicável, pode ajustar */
+  background: transparent;  /* transparente, invisível */
+  border: none;
+  color: transparent;       /* esconde o ícone/seta */
+  font-size: 0;             /* remove tamanho do texto */
+  cursor: pointer;          /* cursor de clique */
+  padding: 0;
+  user-select: none;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+
 
 @media (max-width: 900px) {
   .campos {

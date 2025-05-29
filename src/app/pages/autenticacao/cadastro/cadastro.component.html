@@ -1,4 +1,4 @@
-<h1 class="startup">Cadastre-se</h1>
+<h1 class="startup">Cadastre-<span class="highlight">se</span></h1>
 
 <div>
   <form [formGroup]="formStartup" (ngSubmit)="salvarStartup()">
@@ -36,6 +36,11 @@
         <div class="linkdln">
           <label>Link do LinkedIn:</label>
           <input type="text" id="linkdln" formControlName="siteStartup" class="inputTexto" />
+        </div>
+
+        <div class="video">
+          <label>Link vídeo:</label>
+          <input type="text" id="videos" formControlName="videos" class="inputTexto" />
         </div>
 
         <div class="telefone">
@@ -159,6 +164,15 @@
         </div>
       </div>
     </div>
+
+    <!-- <div class="carousel">
+      @for (imageCtrl of imagens.controls; track $index) {
+        <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem do carousel" class="carousel-image" width="200" />
+      }
+    </div> -->
+
+
+    
     <div class="botao">
       <button class="botaocadastro"  type="submit">Cadastrar</button>
     </div>

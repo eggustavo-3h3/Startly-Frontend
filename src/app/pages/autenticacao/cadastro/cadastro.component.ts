@@ -110,7 +110,7 @@ export class CadastroComponent implements OnInit {
         logo: [null, [Validators.required]],
         atuacoes: [null],
         imagens: this.formBuilder.array<StartupImagem>([]),
-        // videos: [null],
+        videos: [null],
         contatos: [null]
       });
   }
@@ -120,7 +120,6 @@ export class CadastroComponent implements OnInit {
     if (files) {
       const reader = new FileReader();
       reader.onload = () => {
-        //this.formStartup.get('imagens.imagem')?.setValue(reader.result as string); 
         this.formStartup.get('logo')?.setValue(reader.result as string);
       };
       reader.readAsDataURL(files[0]);
@@ -152,43 +151,8 @@ export class CadastroComponent implements OnInit {
 
     console.log("dadosFormulario: ", dadosStartup);
 
-    const startup = {
-    //   login: this.formStartup.value.login, 
-    //   nome: this.formStartup.value.nome,
-    //   descricao: this.formStartup.value.descricao,
-    //   metas: this.formStartup.value.metas,
-    //   cnpj: this.formStartup.value.cnpj,
-    //   siteStartup: this.formStartup.value.siteStartup,
-    //   telefone: this.formStartup.value.telefone,
-    //   cep: this.formStartup.value.cep,
-    //   emailCorporativo: this.formStartup.value.emailCorporativo,
-    //   emailPessoal: this.formStartup.value.emailPessoal,
-    //   quantidadeFuncionario: this.formStartup.value.quantidadeFuncionario,
-    //   responsavelCadastro: this.formStartup.value.responsavelCadastro,
-    //   logradouro: this.formStartup.value.logradouro,
-    //   numero: this.formStartup.value.numero,
-    //   municipio: this.formStartup.value.municipio,
-    //   senha: this.formStartup.value.senha,
-    //   confirmarSenha: this.formStartup.value.confirmarSenha,      
-      
-    //   atuacoes: [ 
-    //     {
-    //       atuacaoId: this.areaAtuacaoId! 
-    //     }
-    //   ],
-    //   imagens: [
-    //     {
-    //       tipoImagem: EnumTipoImagem.Logo,
-    //       imagem: this.logoBase64Image ?? ""
-    //     }
-    //   ]
-     };
-
     // Corrige para o tipo esperado no model NovaStartup
     (dadosStartup as any).atuacoes = this.atuacoesSelecionadas.map(a => ({ atuacaoId: a.id }));
-
-    // console.clear();
-    // console.log("novaStartup: ", JSON.stringify(startup, null, 2));
 
     this.startupService.adicionarStartup(dadosStartup).subscribe({
       next: (response: string) => {

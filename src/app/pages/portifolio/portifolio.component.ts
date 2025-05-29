@@ -51,5 +51,6 @@ onSearch() {
   constructor(private startupService: startupService, private atuacaoService: AtuacaoService) {
     this.listarStartups();
     this.listarAtuacao();
+    console.log(this.listarStartups())
   }
 }

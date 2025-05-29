@@ -19,7 +19,8 @@ export class AuthService{
 
     login(username: string, password: string): Observable<string>{
         return new Observable(observable =>{
-            this.http.post<string>(`${this.baseUrl}/authUrl`,{
+            alert(this.baseUrl);
+            this.http.post<string>(`${this.baseUrl}/autenticar`,{
                 login: username,
                 senha: password
             }).subscribe({
@@ -32,6 +33,7 @@ export class AuthService{
                     //presciso salvar o id da startup(localstorage) ao logar no sistema 
                 },
                 error: (error) => {
+                    console.log(error)
                     observable.error(error);
                     observable.complete();
                 }

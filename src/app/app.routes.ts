@@ -9,6 +9,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroComponent } from './pages/autenticacao/cadastro/cadastro.component';
 import { StartupDetalhesComponent } from './pages/startup-detalhes/startup-detalhes.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
+import { ResetarSenhaComponent } from './pages/resetar-senha/resetar-senha.component';
 
 export const routes: Routes = [
 
@@ -22,4 +23,5 @@ export const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent }, //canActivate: [AuthGuard]},
   { path: 'startup/:id', component: StartupDetalhesComponent},  
   { path: 'esqueci-senha', component: EsqueciSenhaComponent }, 
+  { path: 'resetar-senha', component: ResetarSenhaComponent }, 
 ];
