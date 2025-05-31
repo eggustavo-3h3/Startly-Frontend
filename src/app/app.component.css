@@ -296,6 +296,10 @@ ul li a {
  
  
  }
+
+img{
+  width: 30%;
+}
  
  .footer form .btn:hover { background-color:  #2fcacf; }
  
@@ -398,8 +402,7 @@ ul li a {
     right: 0;
 
   }
+  
 
 
 }
-
- 

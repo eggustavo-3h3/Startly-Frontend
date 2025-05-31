@@ -28,7 +28,12 @@ export class AppComponent {
     const id = this.route.snapshot.paramMap.get('id');
     this.startupService.obterStartups(id).subscribe(data => {
       this.startup = data;
-
   });
   }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  
 }
