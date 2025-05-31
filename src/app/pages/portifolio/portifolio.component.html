@@ -20,9 +20,6 @@
   <div class="card-container">
     <div class="card" *ngFor="let startup of startups$ | async">
 
-      {{ startup | json }}
-
-
       <div class="top">
         <h1 class="fonte">{{ startup.nome }}</h1>
 
