@@ -1,5 +1,4 @@
 import { Atuacao } from "./atuacoes.model";
-import { StartupContatos } from "./contatos.model";
 import { EnumTicketMedio } from "./enumTicketMedio.model";
 import { enumTipoCliente } from "./enumTipoAtendimento.model";
 import { StartupImagem } from "./imagem.model";
@@ -11,6 +10,10 @@ export interface Startup {
     descricao: string,
     metas: string,
     cnpj?: string,
+    emailPessoal: string,
+    emailCorporativo: string,
+    telefone: string,
+    linkedIn: string,
     cep: string,
     logradouro: string,
     numero: string,
@@ -27,5 +30,4 @@ export interface Startup {
     atuacoes: Atuacao[],
     imagens : StartupImagem[],
     videos: StartupVideo[],
-    contatos: StartupContatos[],
 }

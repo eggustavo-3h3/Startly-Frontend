@@ -96,11 +96,11 @@ export class CadastroComponent implements OnInit {
         bairro: [null, [Validators.required, Validators.maxLength(100)]],
         municipio: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
         uf: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
-        siteStartup: [null, [Validators.maxLength(250)]],
+        linkedIn: [null, [Validators.maxLength(300)]],
         quantidadeFuncionario: [null, [Validators.required]],
-        emailPessoal: [null, [Validators.required]], //adicionei esse
-        emailCorporativo: [null, [Validators.required]], //adicionei esse
-        telefone: [null, [Validators.required]], //adicionei esse
+        emailPessoal: [null],
+        emailCorporativo: [null, [Validators.required]], 
+        telefone: [null, [Validators.required]], 
         tipoAtendimento: [null],
         ticketMedio: [null],
         responsavelCadastro: [null, [Validators.minLength(0), Validators.maxLength(100)]],
@@ -111,7 +111,6 @@ export class CadastroComponent implements OnInit {
         atuacoes: [null],
         imagens: this.formBuilder.array<StartupImagem>([]),
         videos: [null],
-        contatos: [null]
       });
   }
 
