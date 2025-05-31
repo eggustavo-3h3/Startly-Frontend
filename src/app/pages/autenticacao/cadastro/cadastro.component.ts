@@ -100,7 +100,7 @@ export class CadastroComponent implements OnInit {
         quantidadeFuncionario: [null, [Validators.required]],
         emailPessoal: [null],
         emailCorporativo: [null, [Validators.required]], 
-        telefone: [null, [Validators.required]], 
+        telefoneFixo: [null, [Validators.required]], 
         tipoAtendimento: [null],
         ticketMedio: [null],
         responsavelCadastro: [null, [Validators.minLength(0), Validators.maxLength(100)]],
@@ -108,9 +108,9 @@ export class CadastroComponent implements OnInit {
         senha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
         confirmarSenha: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(100)]],
         logo: [null, [Validators.required]],
+        urlVideo: [null, [Validators.maxLength(300)]],
         atuacoes: [null],
         imagens: this.formBuilder.array<StartupImagem>([]),
-        videos: [null],
       });
   }
 
@@ -155,7 +155,7 @@ export class CadastroComponent implements OnInit {
 
     this.startupService.adicionarStartup(dadosStartup).subscribe({
       next: (response: string) => {
-        this.route.navigate(['/startup/listar'])
+        this.route.navigate(['/portifolio'])
         console.log('Startup cadastrada com sucesso:', response);
         console.log('Cadastro de startup concluído com sucesso!');
       },
