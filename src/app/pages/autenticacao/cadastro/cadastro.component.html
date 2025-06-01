@@ -2,7 +2,7 @@
   <form [formGroup]="formStartup" (ngSubmit)="salvarStartup()">
     <div class="campos fonte">
       <!-- etapa 1 -->
-      <div *ngIf="etapaAtual === 1">
+      <div class="campos2"  *ngIf="etapaAtual === 1">
         <h1 class="startup">Para começar nos conte sobre sua <span class="highlight">Startup</span></h1>
         <hr>
         <div>
@@ -13,14 +13,14 @@
           </div>
         </div>
 
-        <div class="Descricao">
+        <div class="descricao">
           <label>Descreva sua Startup</label>
           <input type="text" id="descricao" class="inputTexto" formControlName="descricao" required />
         </div>
 
-        <div class="objetivo">
-          <label>Descreva os objetivos e metas da sua Startup:</label>
-          <input type="text" id="objetivo" class="inputTexto" required formControlName="metas" />
+        <div class="metas">
+          <label>Descreva as metas da sua Startup:</label>
+          <input type="text" id="metas" class="inputTexto" required formControlName="metas" />
         </div>
         <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
           Próximo
@@ -28,7 +28,7 @@
       </div>
 
       <!-- etapa 2 -->
-      <div *ngIf="etapaAtual === 2">
+      <div class="campos2"  *ngIf="etapaAtual === 2">
         <h1 class="startup">Agora compartilhe algumas formas de <span class="highlight">Contato</span></h1>
   <hr>
         <div class="linkdln">
@@ -60,7 +60,7 @@
 
       <!-- etapa 3 -->
       <!-- etapa 3: Dados da Empresa -->
-      <div *ngIf="etapaAtual === 3">
+      <div class="campos2"  *ngIf="etapaAtual === 3">
         <h1 class="startup">Agora nos conte mais sobre a <span class="highlight">Empresa</span></h1>
         <hr>
         <div class="qtdFunc">
@@ -116,7 +116,7 @@
 
       <!-- etapa 4 -->
       <!-- etapa 4: Localidade -->
-      <div *ngIf="etapaAtual === 4">
+      <div class="campos2"  *ngIf="etapaAtual === 4">
         <h1 class="startup">compartilhe sua <span class="highlight">Localidade</span></h1>
         <hr>
         <div class="cep">
@@ -156,7 +156,7 @@
 
       <!-- etapa 5 -->
       <!-- etapa 5: Mídias -->
-      <div *ngIf="etapaAtual === 5">
+      <div class="campos2" *ngIf="etapaAtual === 5">
         <h1 class="startup">Que tal algumas <span class="highlight">Mídias?</span></h1>
         <hr>
         <div class="video">
@@ -170,10 +170,13 @@
             <input class="form-control" type="file" id="formFilePropaganda" multiple
               (change)="onFileSelectedPropaganda($event)" />
           </div>
+          <div class="galeria">
           @for (imageCtrl of imagens.controls; track $index) {
-          <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem Propaganda" width="200" />
+          <img class="galeria" [src]="imageCtrl.get('imagem')?.value" alt="Imagem Propaganda" width="200" />
           }
+          </div>
         </div>
+        
         <div class="logo">
           <label>Logo:</label>
           <div class="mb-3">
@@ -192,7 +195,7 @@
 
       <!-- etapa 6 -->
       <!-- etapa 6: Login e Senha -->
-      <div *ngIf="etapaAtual === 6">
+      <div class="campos2"  *ngIf="etapaAtual === 6">
         <h1 class="startup">Para <span class="highlight">Finalizar!!</span></h1>
         <h1 class="startups"> Crie uma forma de acessar sua <span class="highlight">Startup</span></h1>
         <hr>

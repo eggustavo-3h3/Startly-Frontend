@@ -119,7 +119,7 @@ ul li a {
 
   background-color: #B3BDD1;
   width: 100%;
-  height:100%;
+  height:70%;
   float: left;
   font-size: 18px;
   padding: 50px 10px 50px 10px;
@@ -304,7 +304,7 @@ img{
  .footer form .btn:hover { background-color:  #2fcacf; }
  
  /*Responsive*/
- @media (min-width: 1280px) {
+ /* @media (min-width: 1280px) {
  
   .footer               { padding: 100px 50px 50px 100px; }
   .footer .Copyright    { font-size: 16px; }
@@ -322,7 +322,71 @@ img{
   .footer form          { display: block; }
   .footer form button   { float: none; }
  
+ } */
+
+
+  
+
+ @media (max-width: 768px) {
+  .footer{
+
+  width: 100%;
+  height: 85%;
+ 
  }
+  .footer .links a{
+ 
+     line-height: 33px;
+     padding-bottom: 3%;
+  font-size:250%;
+ 
+ 
+ }
+ .footer .right p {
+ 
+ font-size:250%;
+ 
+ }
+
+  .footer .title-footer {
+ 
+     font-size:250%;
+ 
+ }
+ 
+
+}
+
+@media (max-width: 480px) {
+  .footer{
+
+  width: 100%;
+  height: 88%;
+ 
+ }
+  .footer .links a{
+ 
+     line-height: 33px;
+     font-size:180%;
+ 
+ 
+ }
+ .footer .right p {
+ 
+ font-size:180%;
+ 
+ }
+
+  .footer .title-footer {
+ 
+     font-size:180%;
+ 
+ }
+ 
+
+}
+
+
  /*Responsividade da navbar*/
 @media (max-width: 768px) {
   .menu {

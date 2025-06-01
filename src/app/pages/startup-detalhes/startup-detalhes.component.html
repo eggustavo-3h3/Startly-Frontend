@@ -1,5 +1,5 @@
 <div class="carousel">
-  <img [src]='startup.imagens' alt="Imagem do carousel" srcset="" class="carousel-image" />
+  <img [src]='startup.logo' alt="Imagem do carousel" srcset="" class="carousel-image" />
 </div>
 <header>
       <img [src]='startup.logo' alt="">    
@@ -21,19 +21,22 @@
   <div class="container">
     <div class="card descricao">
       <h2>Descrição:</h2>
-      <p>{{startup.descricao}}...</p>
+      <p>{{ startup.descricao }}</p>
     </div>  
 
     <div class="card objetivos">
       <h2>Objetivos:</h2>
       <ul>
-        <li>{{startup.metas}}</li>
+        <li></li>
       </ul>
     </div>
 
     <div class="card metas">
       <h2>Metas:</h2>
       <ul>
+        <li>{{ startup.metas }}</li>
+      </ul>
+      <!-- <ul>
         <li>
           Expandir para novos mercados e regiões, com a meta de atender clientes
           em 3 novos estados ou países até o final do próximo ano;
@@ -47,7 +50,7 @@
           como financiamento, marketing digital e gestão de equipes,
           alcançando 200 participantes por evento.
         </li>
-      </ul>
+      </ul> -->
     </div>
 
     <div class="card area">
