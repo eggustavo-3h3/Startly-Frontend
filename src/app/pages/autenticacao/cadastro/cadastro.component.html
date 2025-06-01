@@ -1,24 +1,19 @@
-<h1 class="startup">Cadastre-<span class="highlight">se</span></h1>
-
 <div>
   <form [formGroup]="formStartup" (ngSubmit)="salvarStartup()">
     <div class="campos fonte">
-      <div class="esquerda">
-        <div class="login">
-          <label>Login:</label>
-          <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" formControlName="login" class="inputTexto"
-            required />
-        </div>        
-
+      <!-- etapa 1 -->
+      <div *ngIf="etapaAtual === 1">
+        <h1 class="startup">Para começar nos conte sobre sua <span class="highlight">Startup</span></h1>
+        <hr>
         <div>
           <div class="nome">
             <label>Qual o nome da sua Startup?</label>
-            <input type="text" placeholder="Digite o nome da sua Startup" class="inputTexto"  formControlName="nome" required />
+            <input type="text" placeholder="Digite o nome da sua Startup" class="inputTexto" formControlName="nome"
+              required />
           </div>
         </div>
 
         <div class="Descricao">
-
           <label>Descreva sua Startup</label>
           <input type="text" id="descricao" class="inputTexto" formControlName="descricao" required />
         </div>
@@ -27,20 +22,18 @@
           <label>Descreva os objetivos e metas da sua Startup:</label>
           <input type="text" id="objetivo" class="inputTexto" required formControlName="metas" />
         </div>
+        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
+          Próximo
+        </button>
+      </div>
 
-        <div class="cnpj">
-          <label>CNPJ:</label>
-          <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" />
-        </div>
-
+      <!-- etapa 2 -->
+      <div *ngIf="etapaAtual === 2">
+        <h1 class="startup">Agora compartilhe algumas formas de <span class="highlight">Contato</span></h1>
+  <hr>
         <div class="linkdln">
           <label>Link do LinkedIn:</label>
           <input type="text" id="linkdln" formControlName="linkedIn" class="inputTexto" />
-        </div>
-
-        <div class="video">
-          <label>Link vídeo:</label>
-          <input type="text" id="urlVideo" formControlName="urlVideo" class="inputTexto" />
         </div>
 
         <div class="telefone">
@@ -52,43 +45,55 @@
           <label>E-mail Corporativo:</label>
           <input type="email" id="emailCorporativo" class="inputTexto" formControlName="emailCorporativo" required />
         </div>
+
+        <div class="emailPessoal">
+          <label>E-mail Pessoal (opcional):</label>
+          <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" />
+        </div>
+        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
+          Próximo
+        </button>
+        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">
+          Voltar
+        </button>
+      </div>
+
+      <!-- etapa 3 -->
+      <!-- etapa 3: Dados da Empresa -->
+      <div *ngIf="etapaAtual === 3">
+        <h1 class="startup">Agora nos conte mais sobre a <span class="highlight">Empresa</span></h1>
+        <hr>
         <div class="qtdFunc">
           <label>Quantidade de Funcionários:</label>
           <input type="number" id="qtdFunc" class="inputTexto" formControlName="quantidadeFuncionario" required />
+        </div>
+
+        <div class="cnpj">
+          <label>CNPJ:</label>
+          <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" />
         </div>
 
         <div class="areaAtuacao">
           <label for="area">Área de Atuação:</label>
           <div class="atuacao-row">
             <app-area-atuacao (atuacaoSelecionada)="atuacaoSelecionadaAdicionar = $event"></app-area-atuacao>
-            <button type="button" class ='adicionar' (click)="adicionarAtuacao()">Adicionar</button>
+            <button type="button" class="adicionar" (click)="adicionarAtuacao()">
+              Adicionar
+            </button>
           </div>
           <div *ngIf="atuacoesSelecionadas.length > 0" class="atuacoes-lista">
             <span *ngFor="let atuacao of atuacoesSelecionadas; let i = index">
-              {{ atuacao.descricao }} <button type="botaoRemover" (click)="removerAtuacao(i)">X</button>
+              {{ atuacao.descricao }}
+              <button type="botaoRemover" (click)="removerAtuacao(i)">X</button>
             </span>
           </div>
         </div>
 
-        <div class="logo">
-          <label>Logo:</label>
-          <div class="mb-3">
-            <input class="form-control" type="file" id="formFileLogo" (change)="onFileSelectedLogo($event)" />
-          </div>
-          <!-- @if (formStartup.value?.imagens.imagem) { -->
-          @if (formStartup.value?.logo) {
-            <!-- <img [src]="formStartup.value?.imagens.imagem" alt="Logo" width="200" /> -->
-            <img [src]="formStartup.value?.logo" alt="Logo" width="200" />
-          }
-        </div>
-      </div>
-
-      <div class="direita">
         <div class="tipoCliente">
           <label>Tipo de Atendimento</label>
           <select formControlName="tipoAtendimento" required>
             @for (tc of enumTipoAtendimento; track $index) {
-              <option [ngValue]="tc.id">{{ tc.descricao }}</option>
+            <option [ngValue]="tc.id">{{ tc.descricao }}</option>
             }
           </select>
         </div>
@@ -97,21 +102,23 @@
           <label>Ticket Médio:</label>
           <select formControlName="ticketMedio" required>
             @for (tm of enumTicketMedio; track $index) {
-              <option [ngValue]="tm.id">{{ tm.descricao }}</option>
+            <option [ngValue]="tm.id">{{ tm.descricao }}</option>
             }
           </select>
         </div>
+        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
+          Próximo
+        </button>
+        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">
+          Voltar
+        </button>
+      </div>
 
-        <div class="respCadastro">
-          <label>Responsável pelo Cadastro:</label>
-          <input type="text" id="respCadastro" class="inputTexto" formControlName="responsavelCadastro" required />
-        </div>
-
-        <div class="emailPessoal">
-          <label>E-mail Pessoal (opcional):</label>
-          <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" />
-        </div>
-
+      <!-- etapa 4 -->
+      <!-- etapa 4: Localidade -->
+      <div *ngIf="etapaAtual === 4">
+        <h1 class="startup">compartilhe sua <span class="highlight">Localidade</span></h1>
+        <hr>
         <div class="cep">
           <label>CEP:</label>
           <input type="text" id="cep" class="inputTexto" formControlName="cep" required />
@@ -119,7 +126,13 @@
 
         <div class="logradouro">
           <label>Logradouro:</label>
-          <input type="text" id="logradouro" placeholder="Ex: Av. Felipe Amador Junior" class="inputTexto" formControlName="logradouro" required />
+          <input type="text" id="logradouro" placeholder="Ex: Av. Felipe Amador Junior" class="inputTexto"
+            formControlName="logradouro" required />
+        </div>
+
+        <div class="numero">
+          <label>Número da Residencia:</label>
+          <input id="numero" class="inputTexto" formControlName="numero" required />
         </div>
 
         <div class="bairro">
@@ -132,17 +145,62 @@
           <input type="text" id="uf" class="inputTexto" formControlName="uf" required />
         </div>
 
-
-        <div class="numero">
-          <label>Número da Residencia:</label>
-          <input id="numero" class="inputTexto" formControlName="numero" required />
-        </div>
-
         <div class="estado">
           <label>Municipio:</label>
           <input type="text" id="municipio" class="inputTexto" formControlName="municipio" required />
         </div>
+        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">Próximo</button>
+        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">Voltar</button>
+      </div>
 
+
+      <!-- etapa 5 -->
+      <!-- etapa 5: Mídias -->
+      <div *ngIf="etapaAtual === 5">
+        <h1 class="startup">Que tal algumas <span class="highlight">Mídias?</span></h1>
+        <hr>
+        <div class="video">
+          <label>Link vídeo:</label>
+          <input type="text" id="urlVideo" formControlName="urlVideo" class="inputTexto" />
+        </div>
+
+        <div formArrayName="imagens">
+          <label>Propagandas:</label>
+          <div class="mb-3">
+            <input class="form-control" type="file" id="formFilePropaganda" multiple
+              (change)="onFileSelectedPropaganda($event)" />
+          </div>
+          @for (imageCtrl of imagens.controls; track $index) {
+          <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem Propaganda" width="200" />
+          }
+        </div>
+        <div class="logo">
+          <label>Logo:</label>
+          <div class="mb-3">
+            <input class="form-control" type="file" id="formFileLogo" (change)="onFileSelectedLogo($event)" />
+          </div>
+          <!-- @if (formStartup.value?.imagens.imagem) { -->
+          @if (formStartup.value?.logo) {
+          <!-- <img [src]="formStartup.value?.imagens.imagem" alt="Logo" width="200" /> -->
+          <img [src]="formStartup.value?.logo" alt="Logo" width="200" />
+          }
+        </div>
+        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">Próximo</button>
+        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">Voltar</button>
+      </div>
+
+
+      <!-- etapa 6 -->
+      <!-- etapa 6: Login e Senha -->
+      <div *ngIf="etapaAtual === 6">
+        <h1 class="startup">Para <span class="highlight">Finalizar!!</span></h1>
+        <h1 class="startups"> Crie uma forma de acessar sua <span class="highlight">Startup</span></h1>
+        <hr>
+        <div class="login">
+          <label>Login:</label>
+          <input type="text" placeholder="Digite o login para acessar o perfil de sua Startup" formControlName="login"
+            class="inputTexto" required />
+        </div>
         <div class="senha">
           <label>Senha:</label>
           <input type="password" id="senha" class="inputTexto" formControlName="senha" required />
@@ -153,28 +211,12 @@
           <input type="password" id="confirmarSenha" class="inputTexto" formControlName="confirmarSenha" required />
         </div>
 
-        <div formArrayName="imagens">
-          <label>Propagandas:</label>
-          <div class="mb-3">
-            <input class="form-control" type="file" id="formFilePropaganda" multiple (change)="onFileSelectedPropaganda($event)" />
-          </div>
-          @for (imageCtrl of imagens.controls; track $index) {
-            <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem Propaganda" width="200" />
-          }
+        <div class="botao">
+          <button class="botaocadastro botaoAnterior" type="submit">Cadastrar</button>
+          <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">Voltar</button>
         </div>
       </div>
-    </div>
 
-    <!-- <div class="carousel">
-      @for (imageCtrl of imagens.controls; track $index) {
-        <img [src]="imageCtrl.get('imagem')?.value" alt="Imagem do carousel" class="carousel-image" width="200" />
-      }
-    </div> -->
-
-
-    
-    <div class="botao">
-      <button class="botaocadastro"  type="submit">Cadastrar</button>
     </div>
   </form>
 </div>

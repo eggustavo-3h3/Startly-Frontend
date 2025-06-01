@@ -21,22 +21,18 @@
     <div class="card" *ngFor="let startup of startups$ | async">
 
       <div class="top">
-        <h1 class="fonte">{{ startup.nome }}</h1>
-
-          <img [src]='startup.logo' alt=""> 
-       
+          <img [src]='startup.logo' alt="">    
         <div class="TagLadoLado">
           <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
         </div>
       </div>
       <div class="bottom">
-        <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}</p>
+        <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}<span>...</span></p>
         <a [routerLink]="['/startup', startup.id]" class="button">Sobre</a>
       </div>
     </div>
   </div>
 </main>
-
 <footer class="text-body-secondary py-5">
   <div class="container">
 

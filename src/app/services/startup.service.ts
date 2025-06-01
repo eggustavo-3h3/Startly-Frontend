@@ -24,6 +24,11 @@ export class startupService{
         // Método para obter a lista de startups
         return this.http.get<Startup[]>(`${this.baseUrl}/startup/obter/${id}`, { headers: this.authService.getAutheHeaders() })
     }
+
+    pesquisarStartups(nome: string) : Observable<Startup[]> {
+        // Método para pesquisar startups por nome
+        return this.http.get<Startup[]>(`${this.baseUrl}/startup/pesquisar/${nome}`, { headers: this.authService.getAutheHeaders() })
+    }
     
     adicionarStartup(startup: Startup) : Observable<string> {
         // Método para adicionar uma nova startup

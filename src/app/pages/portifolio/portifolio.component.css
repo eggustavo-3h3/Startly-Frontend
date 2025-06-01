@@ -45,49 +45,46 @@ p{
   padding-top: 0;
   max-width: 100%;
   margin: 0 auto;
-  
 }
 
 .card {
   display: flex;
-  width: 400px;
-  height: 100%;
+  flex-direction: column;
+  width: 50%;
+  min-width: 400px;
+  max-width: 230px;
+  min-height: 500px;
+  max-height: 500px;
+  height: 600px;
   border: 1px solid #000;
   background-color: #fff;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  display: flex;
+  margin-bottom: 2vh;
 }
 
 .top {
-  background-color: #0e3a70;
-  height: 100%;
+  height: 60%;
   width: 100%;
   color: white;
-  padding: 16px;
   position: relative;
   text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
 }
 .top img {
-  max-width: 30%;
-  max-height: 30%;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  display: block;
+  object-fit: cover;
+  background: #f5f5f5;
 }
-/* .logo {
- 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .logo img {
-  width: 80px;
-  margin-bottom: 8px;
+img{
+  width: 100%;
 }
-.logo h1 {
-  font-size: 24px;
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  margin: 0;
-} */
 
 .tag {
   background-color: #e5e5e5;
@@ -96,15 +93,26 @@ p{
   padding: 4px 10px;
   border-radius: 4px;
   position: absolute;
-  bottom: -12px;
-  right: 16px;
+  bottom: 8px;
+  right: 8px;
   font-weight: bold;
+  display: inline-block;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  z-index: 2;
 }
 
 .bottom {
+  flex: 1 1 0;
   padding: 20px 16px;
   font-size: 14px;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .button {
@@ -119,47 +127,41 @@ p{
   border-radius: 4px;
 }
 
+.texto-com-ellipsis {
+  height: 80px;
+  white-space: normal; /* Impede quebra de linha */
+  overflow: hidden; /* Oculta o excesso de texto */
+  text-overflow: ellipsis; /* Adiciona reticências no final */
+}
+
 /* Responsividade geral */
 @media (max-width: 768px) {
   .card-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .card {
     width: 90%;
-    margin-bottom: 20px;
+    min-width: unset;
+    max-width: unset;
+    height: 420px;
+    max-height: 420px;
+    min-height: 420px;
   }
-
   .top {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .img {
-    max-width: 100px;
-    height: auto;
-  }
-
-  .bottom {
-    text-align: center;
+    height: 180px;
   }
 }
 
 @media (max-width: 400px) {
   .card {
     width: 100%;
+    min-width: unset;
+    max-width: unset;
+    height: 420px;
+    max-height: 420px;
+    min-height: 420px;
   }
-}
-
-
-
-.texto-com-ellipsis {
-  height: 250px;  
-  white-space: normal; /* Impede quebra de linha */
-  overflow: hidden; /* Oculta o excesso de texto */
-  text-overflow: ellipsis; /* Adiciona reticências no final */
 }
 
 /* Container principal da página */

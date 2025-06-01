@@ -30,7 +30,9 @@ export class CadastroComponent implements OnInit {
   ticketMedio: string | null = null;
   tipoCliente: string | null = null;
 
-
+  etapaAtual: number = 1;
+  totalEtapas: number = 6;
+  
   atuacoes: Atuacao[] = [];
 
   enumTicketMedio = [
@@ -62,6 +64,18 @@ export class CadastroComponent implements OnInit {
       next: (dados) => this.atuacoes = dados,
       error: (erro) => console.error('Erro ao buscar áreas de atuação:', erro)
     });
+  }
+
+  proximaEtapa(){
+    if (this.etapaAtual < this.totalEtapas) {
+      this.etapaAtual++;
+    }
+  }
+  
+  etapaAnterior() {
+    if (this.etapaAtual > 1) {
+      this.etapaAtual--;
+    }
   }
 
   adicionarAtuacao() {
@@ -144,6 +158,8 @@ export class CadastroComponent implements OnInit {
       });
     }    
   }  
+
+
 
   salvarStartup() {
     const dadosStartup = this.formStartup.getRawValue() as Startup;
