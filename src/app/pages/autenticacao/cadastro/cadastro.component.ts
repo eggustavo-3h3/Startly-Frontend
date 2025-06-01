@@ -16,6 +16,8 @@ import { AreaAtuacaoComponent } from '../../../components/area-atuacao/area-atua
 import { NovaStartup } from '../../../models/nova-startup.model';
 import { StartupImagem } from '../../../models/imagem.model';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-cadastro',
   standalone: true,
@@ -171,15 +173,24 @@ export class CadastroComponent implements OnInit {
 
     this.startupService.adicionarStartup(dadosStartup).subscribe({
       next: (response: string) => {
-        this.route.navigate(['/portifolio'])
-        console.log('Startup cadastrada com sucesso:', response);
-        console.log('Cadastro de startup concluído com sucesso!');
+        this.route.navigate(['/portifolio']);
+
+        Swal.fire({
+          title: "Pont Start",
+          html: "Startup Registrada com Sucesso!",
+          icon: "success",
+          draggable: true
+        });
       },
-      error: (error) => {
-        console.error('Erro ao cadastrar startup:', error);
-      },
-      complete: () => {
-        console.log('Finalizado!');
+      error: (error) => {      
+        const erros: string = error.error.join('<br/>');
+
+        Swal.fire({
+          title: "Pont Start",
+          html: erros,
+          icon: "error",
+          draggable: true
+        });
       }
     });
   }
