@@ -26,7 +26,9 @@
           <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
         </div>
       </div>
+      
       <div class="bottom">
+        <p class="fonte tamanho" style="text-align: center; font-size: xx-large;">{{startup.nome}}</p>
         <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}<span>...</span></p>
         <a [routerLink]="['/startup', startup.id]" class="button">Sobre</a>
       </div>
