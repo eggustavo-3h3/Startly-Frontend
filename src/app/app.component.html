@@ -18,19 +18,17 @@
         <a href="#sobre">Sobre</a>
       </nav>
 
-      
-        <div *ngIf="!this.authService.isAuthenticated(); else loggedIn">
-          <div class="actions">
-            <a href="/cadastro" class="btn register">Cadastrar-se</a>
-            <a href="/login" class="btn login">Logar</a>
-          </div>
+
+      <div *ngIf="!this.authService.isAuthenticated(); else loggedIn">
+        <div class="actions">
+          <a href="/cadastro" class="btn register">Cadastrar-se</a>
+          <a href="/login" class="btn login">Logar</a>
         </div>
-        
-       
+      </div>
       <ng-template #loggedIn>
         <div class="avatar">
-          <a href="/perfil"><img src="perfilFoto.png"></a>
-          <button type="button" class ='Logout' (click)="logout()">Logout</button>
+          <a href="/perfil">Perfil</a>
+          <button type="button" class='Logout' (click)="logout()">Logout</button>
         </div>
       </ng-template>
     </header>

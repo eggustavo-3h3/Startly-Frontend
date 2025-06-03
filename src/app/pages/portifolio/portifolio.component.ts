@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Startup } from '../../models/startup.model';
 import { startupService } from '../../services/startup.service';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AtuacaoService } from '../../services/atuacao.service';
 import { Atuacao } from '../../models/atuacoes.model';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +19,7 @@ export class PortifolioComponent {
   //Atributos
   startups$ = new Observable<Startup[]>();
   atuacoes$ = new Observable<Atuacao[]>();
+  nome: string = '';
 
   listarStartups() {
     this.startups$ = this.startupService.listarStartups();
@@ -37,12 +38,20 @@ export class PortifolioComponent {
     // })
   }
 
-  searchTerm: string = '';
+  buscarStartups() {
+    if (!this.nome.trim()) return;
 
-onSearch() {
-  console.log('Termo de busca:', this.searchTerm);
-  // Faça a lógica de busca aqui (chamada a API, filtro de lista, etc)
-}
+    this.startupService.pesquisarStartups(this.nome.trim())
+      .subscribe({
+        next: (dados) => {
+          this.startups$ = of(dados); // transforma array em Observable
+          console.log('Startups encontradas:', dados);
+        },
+        error: (err) => {
+          console.error('Erro ao buscar startups', err);
+        }
+      });
+  }
 
   listarAtuacao() {
     this.atuacoes$ = this.atuacaoService.listarAtuacoes();
@@ -51,6 +60,5 @@ onSearch() {
   constructor(private startupService: startupService, private atuacaoService: AtuacaoService) {
     this.listarStartups();
     this.listarAtuacao();
-    console.log(this.listarStartups())
   }
 }

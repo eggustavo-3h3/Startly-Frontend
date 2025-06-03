@@ -27,7 +27,7 @@ export class startupService{
 
     pesquisarStartups(nome: string) : Observable<Startup[]> {
         // Método para pesquisar startups por nome
-        return this.http.get<Startup[]>(`${this.baseUrl}/startup/pesquisar/${nome}`, { headers: this.authService.getAutheHeaders() })
+        return this.http.get<Startup[]>(`${this.baseUrl}/startup/buscar/?nome=${nome}`, { headers: this.authService.getAutheHeaders() })
     }
     
     adicionarStartup(startup: Startup) : Observable<string> {

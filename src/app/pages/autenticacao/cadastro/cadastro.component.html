@@ -22,9 +22,11 @@
           <label>Descreva as metas da sua Startup:</label>
           <input type="text" id="metas" class="inputTexto" required formControlName="metas" />
         </div>
-        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
-          Próximo
-        </button>
+        <div class="botoes-navegacao">
+          <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
+            Próximo
+          </button>
+        </div>
       </div>
 
       <!-- etapa 2 -->
@@ -50,12 +52,14 @@
           <label>E-mail Pessoal (opcional):</label>
           <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" />
         </div>
-        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
-          Próximo
-        </button>
-        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">
-          Voltar
-        </button>
+        <div class="botoes-navegacao">
+          <button type="button" class="botaocadastro botaoProximo" (click)="etapaAnterior()">
+            Voltar
+          </button>
+          <button type="button" class="botaocadastro botaoAnterior" (click)="proximaEtapa()">
+            Proximo
+          </button>
+        </div>
       </div>
 
       <!-- etapa 3 -->
@@ -106,12 +110,14 @@
             }
           </select>
         </div>
-        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
-          Próximo
-        </button>
-        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">
-          Voltar
-        </button>
+        <div class="botoes-navegacao">
+          <button type="button" class="botaocadastro botaoProximo" (click)="etapaAnterior()">
+            Voltar
+          </button>
+          <button type="button" class="botaocadastro botaoAnterior" (click)="proximaEtapa()">
+            Proximo
+          </button>
+        </div>
       </div>
 
       <!-- etapa 4 -->
@@ -149,8 +155,10 @@
           <label>Municipio:</label>
           <input type="text" id="municipio" class="inputTexto" formControlName="municipio" required />
         </div>
-        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">Próximo</button>
-        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">Voltar</button>
+        <div class="botoes-navegacao">
+          <button type="button" class="botaocadastro botaoProximo" (click)="etapaAnterior()">Voltar</button>
+          <button type="button" class="botaocadastro botaoAnterior" (click)="proximaEtapa()">Proximo</button>
+        </div>
       </div>
 
 
@@ -188,8 +196,10 @@
           <img [src]="formStartup.value?.logo" alt="Logo" width="200" />
           }
         </div>
-        <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">Próximo</button>
-        <button type="button" class="botaocadastro botaoAnterior" (click)="etapaAnterior()">Voltar</button>
+        <div class="botoes-navegacao">
+          <button type="button" class="botaocadastro botaoProximo" (click)="etapaAnterior()">Voltar</button>
+          <button type="button" class="botaocadastro botaoAnterior" (click)="proximaEtapa()">Proximo</button>
+        </div>
       </div>
 
 

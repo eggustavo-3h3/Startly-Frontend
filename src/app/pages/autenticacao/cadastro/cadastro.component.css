@@ -273,3 +273,11 @@ h1 {
     padding: 0.1rem 0.4rem;
   }
 }
+
+.botoes-navegacao {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}

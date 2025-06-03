@@ -6,11 +6,11 @@
   <div class="search-container">
     <input
       type="text"
-      [(ngModel)]="searchTerm"
-      (keyup.enter)="onSearch()"
-      placeholder="Pesquisar..."
+      [(ngModel)]="nome"
+      (keyup.enter)="buscarStartups()"
+      placeholder="Pesquisar por Nome..."
     />
-    <button (click)="onSearch()">
+    <button (click)="buscarStartups()">
       <i class="fas fa-search"></i>
     </button>
   </div>
