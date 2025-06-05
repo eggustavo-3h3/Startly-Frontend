@@ -19,6 +19,18 @@ body {
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.contatos {
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.areaContato {
+  width: 100%;
+  text-align: center;
+}
+
 .card h2 {
   font-weight: bold;
   font-size: 1.3rem;
@@ -41,6 +53,7 @@ body {
   background-color: #d3d6de;
   text-align: center;
 }
+
 
 
     header {
@@ -70,40 +83,124 @@ body {
     }
 
      /* carousel  */
-
      .carousel {
       position: relative;
-      width: 65%;
-      margin: 20px auto;
+      width: 600px;
+      height: 300px;
+      margin: 40px auto;
       overflow: hidden;
-      border-radius: 8px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
     }
-    
-    .carousel-image {
+
+    .slides {
+      display: flex;
       width: 100%;
-      display: block;
+      height: 100%;
+      transition: transform 0.5s ease;
     }
-    
-    .btn {
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Navegação */
+    .nav {
       position: absolute;
-      top: 0;
-      height: 100%;       /* ocupa altura total do carousel */
-      width: 50px;        /* define uma largura clicável, pode ajustar */
-      background: transparent;  /* transparente, invisível */
-      border: none;
-      color: transparent;       /* esconde o ícone/seta */
-      font-size: 0;             /* remove tamanho do texto */
-      cursor: pointer;          /* cursor de clique */
-      padding: 0;
-      user-select: none;
+      width: 100%;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .nav label {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* Movimentação dos slides com radio buttons */
+    #slide1:checked ~ .slides {
+      transform: translateX(0%);
+    }
+
+    #slide2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide3:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide4:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide5:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide6:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide7:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide8:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    #slide9:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+  
+    #slide10:checked ~ .slides {
+      transform: translateX(-100%);
     }
     
-    .prev-btn {
-      left: 10px;
+
+    .logo{
+      width: 30%;
+      height: auto;
+    }
+
+    .dropdown {
+      position: center;
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
     }
     
-    .next-btn {
-      right: 10px;
+    
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 8x 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      min-width: 160px;
+      z-index: 1000;
+      padding: 20px;
+    }
+    
+    .dropdown-content a {
+      display: block;
+      padding: 10px 16px;
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f2f2f2;
     }
 
     @media (max-width: 768px) {

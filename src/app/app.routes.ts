@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'startup', component: StartupComponent },
   { path: 'portifolio', component: PortifolioComponent },
   { path: 'politica', component: PoliticaComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil/:id', component: PerfilComponent },
   { path: 'cadastro', component: CadastroComponent }, //canActivate: [AuthGuard]},
   { path: 'startup/:id', component: StartupDetalhesComponent},  
   { path: 'esqueci-senha', component: EsqueciSenhaComponent }, 

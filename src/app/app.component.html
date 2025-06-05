@@ -27,7 +27,8 @@
       </div>
       <ng-template #loggedIn>
         <div class="avatar">
-          <a href="/perfil">Perfil</a>
+          <!-- <a [routerLink]="['/perfil', startup.id]" class="button">Sobre</a> -->
+          <a href="/perfil" class="button">Sobre</a>
           <button type="button" class='Logout' (click)="logout()">Logout</button>
     
         </div>

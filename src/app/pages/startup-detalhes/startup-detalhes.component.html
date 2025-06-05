@@ -1,41 +1,45 @@
-<div class="carousel">
-  <img [src]='startup.imagens' alt="Imagem do carousel" srcset="" class="carousel-image" />
-</div>
 <header>
-      <img [src]='startup.logo' alt="">    
-    <br />
+  <h1>{{ startup.nome }}</h1>
+  <br/>
+  <img class="logo" [src]='startup.logo' alt="">
+  <br>
+ 
 
-    <strong>LinkedIn:</strong><a href="">{{  startup.linkedIn  }}</a><br>
-    <strong>Website:</strong><a href=""></a>
+  <br>
+  <h1>Propagandas: </h1>
+  <div class="carousel">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+  
+    <div class="slides">
+      <div class="slide"  *ngFor="let si of startup.imagens">
+        <img [src]='si.imagem' alt="Imagem 1">
+      </div>
+    </div>
+  
+    <div class="nav">
+      <label for="slide3">❮</label>
+      <label for="slide2">❯</label>
+    </div>
+  </div>
+
+  <strong>LinkedIn:</strong><a href="">{{ startup.linkedIn }}</a><br>
+
 </header>
-<div class="carousel">
-    <div class="carousel-images" id="carousel-images">
-       
-    </div>
-    <div class="carousel-item">
-        <img [src]='startup.imagens' alt="...">
-    </div>
-</div>
 
-  <div class="container">
-    <div class="card descricao">
-      <h2>Descrição:</h2>
-      <p>{{ startup.descricao }}</p>
-    </div>  
+<div class="container">
+  <div class="card descricao">
+    <h2>Descrição:</h2>
+    <p>{{ startup.descricao }}</p>
+  </div>
 
-    <div class="card objetivos">
-      <h2>Objetivos:</h2>
-      <ul>
-        <li></li>
-      </ul>
-    </div>
-
-    <div class="card metas">
-      <h2>Metas:</h2>
-      <ul>
-        <li>{{ startup.metas }}</li>
-      </ul>
-      <!-- <ul>
+  <div class="card metas">
+    <h2>Metas:</h2>
+    <ul>
+      <li>{{ startup.metas }}</li>
+    </ul>
+    <!-- <ul>
         <li>
           Expandir para novos mercados e regiões, com a meta de atender clientes
           em 3 novos estados ou países até o final do próximo ano;
@@ -50,16 +54,33 @@
           alcançando 200 participantes por evento.
         </li>
       </ul> -->
-    </div>
-
-    <div class="card area">
-      <h2>Área e Tipos de Clientes</h2>
-      <p>
-        Somos uma empresa que oferece soluções inovadoras para clientes
-        {{startup.enumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
-        cada mercado, impulsionamos a transformação digital global.
-      </p>
-    </div>
   </div>
 
-<button class="button">Entre em Contato</button>
+  <div class="card area">
+    <h2>Área e Tipos de Clientes</h2>
+    <p>
+      Somos uma empresa que oferece soluções inovadoras para clientes
+      {{startup.enumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
+      cada mercado, impulsionamos a transformação digital global.
+    </p>
+  </div>
+</div>
+
+
+<div class="contatos areaContato">
+<div class="dropdown">
+  <button class="button" (click)="toggleMenu()">
+    Entre em Contato
+  </button>
+
+  <div *ngIf="menuAberto" class="dropdown-content">
+    <h2>Contato:</h2>
+    <br> 
+    <p>Telefone: {{ startup.telefoneFixo }}</p>
+    <br>
+    <p>email (Corporativo): {{ startup.emailCorporativo }}</p>
+    <br>
+    <p>email (Pessoal): {{ startup.emailPessoal }}</p>
+  </div>
+</div>
+</div>
