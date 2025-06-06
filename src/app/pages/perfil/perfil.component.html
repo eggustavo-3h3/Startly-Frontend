@@ -9,18 +9,24 @@
                 <input type="text" class="inputTexto">
             </div>
 
-            <div class="descricao">
-                <p>Descrição:</p>
-                <textarea name="" id="" cols="15" rows="6"></textarea>
-            </div>
+          
 
             <div class="qtdFuncionario">
                 <p>Quantidade de Funcionários:</p>
                 <input type="number" min="1" max="500" class="inputTexto">
             </div>
+            
+            <div class="metas">
+            <p>Metas da sua Startup:</p>
+            <input type="text" id="metas" class="inputTexto" required formControlName="metas" />
+            </div>
+             <p>Descricao da sua Startup:</p>
+              <textarea id="metas" class="campo-textarea"></textarea>
+
         </div>
         <div class="direita">
-            <div class="tipoDeCliente">
+         
+ <div class="tipoDeCliente">
                 <p>Tipo de Clientes:</p>
                 <select class="fonte">
                     <option value="Estadual">Local</option>
@@ -29,7 +35,6 @@
                 </select>
             </div>
 
-
             <div class="telefone">
                 <p>Telefone:</p>
                 <input type="text" class="inputTexto">
@@ -37,6 +42,11 @@
 
             <div class="email">
                 <p>E-Mail Pessoal:</p>
+                <input type="text" class="inputTexto">
+            </div>
+
+            <div class="emailC">
+                <p>E-Mail Corporativo:</p>
                 <input type="text" class="inputTexto">
             </div>
 
@@ -55,3 +65,4 @@
     </div>
     <button class="botoes">Editar</button>
 </div>
+<br>
