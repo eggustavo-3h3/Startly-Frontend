@@ -99,7 +99,6 @@ export class CadastroComponent implements OnInit {
   }
 
   buildForm() {
-    console.log("buildForm...");
     this.formStartup = this.formBuilder.group(
       {
         nome: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
