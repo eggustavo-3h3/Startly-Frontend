@@ -27,9 +27,9 @@
       </div>
       <ng-template #loggedIn>
         <div class="avatar">
-          <!-- <a [routerLink]="['/perfil', startup.id]" class="button">Sobre</a> -->
-          <a href="/perfil" class="button">Sobre</a>
-          <button type="button" class='Logout' (click)="logout()">Logout</button>
+        
+          <button type="button" class="button fonte perfil" (click)="goToPerfil(this.authService.startupId!)">Perfil</button>
+          <button type="button" class='botao Logout' (click)="logout()">Logout</button>
     
         </div>
       </ng-template>
@@ -51,12 +51,7 @@
         <a href="#sobre" title="jQuery">Sobre</a>
       </p>
 
-      <div class="footer-icons">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-pinterest"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-      </div>
+  
 
     </div>
     <!--Left-->

@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { environment } from "../../environments/environment";
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +15,7 @@ export class AuthService{
        localStorage.getItem('token')
     );
     token: any;
+    startupId: string | null = null;
 
     constructor(private http: HttpClient, private router: Router){}
 
@@ -26,6 +28,8 @@ export class AuthService{
                 next: (response) => {
                     localStorage.setItem('token', response);
                     this.tokenSubject.next(response);
+
+                    this.startupId = this.getClaim("Id");
 
                     observable.next(response);
                     observable.complete();
@@ -55,4 +59,20 @@ export class AuthService{
             'Authorization':`Bearer ${this.token}`
         });
     }
+
+    getClaim<T = any>(claimName: string): T | null {
+        const token = this.tokenSubject.value;
+        if (!token) return null;
+    
+        try {
+          const decoded: any = jwtDecode(token);
+          console.log("decoded: ", decoded);
+          return decoded[claimName] ?? null;
+        } catch (error) {
+          console.error('Erro ao decodificar o token:', error);
+          return null;
+        }
+      }
 }
+
+

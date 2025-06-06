@@ -16,14 +16,15 @@ export class PerfilComponent {
   constructor(private authService: AuthService, private startupService: startupService, private route: ActivatedRoute) {}
   startup: any;
 
-  // ngOnInit() {
+  ngOnInit() {
   
-  //   const id = this.route.snapshot.paramMap.get('id');
-  //   this.startupService.obterStartups(id).subscribe(data => {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id)
+    this.startupService.obterStartups(id).subscribe(data => {
 
-  //     this.startup = data;
-  //     console.log(data)
-  //   });
-  // }
+      this.startup = data;
+      console.log(data)
+    });
+  }
 }
 

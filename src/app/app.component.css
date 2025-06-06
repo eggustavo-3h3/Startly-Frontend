@@ -78,6 +78,22 @@ ul li a {
   display: none;
 }
 
+.botao {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1.2rem;
+  font-size: 1.4rem;
+  background-color: #bcc7dd; 
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Jersey 10', sans-serif;
+}
+
+.botao:hover {
+  background-color: #aab9d4;
+}
 
 .navbar {
   display: flex;
@@ -85,6 +101,15 @@ ul li a {
   justify-content: space-between;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.avatar{
+  display: flex;
+  align-items: center;
+}
+
+.perfil{
+   margin-right: 10px;
+   text-decoration:none ;
 }
 
 .logo {

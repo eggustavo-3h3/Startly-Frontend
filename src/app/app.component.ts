@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ActivatedRoute, Route, RouterModule, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { BaseUiComponent } from './components/base-ui/base-ui.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,7 @@ export class AppComponent {
 
   startup: any;
   
-  constructor(private route: ActivatedRoute, private startupService: startupService) {}
+  constructor(private route: ActivatedRoute, private startupService: startupService, private router: Router) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -35,6 +35,10 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  goToPerfil(id: string) {
+    this.router.navigate(['/perfil', id]); // <- envia via path param
   }
   
 
