@@ -17,29 +17,11 @@ export class StartupDetalhesComponent {
 
   constructor(private route: ActivatedRoute, private startupService: startupService) {}
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id)
     this.startupService.obterStartups(id).subscribe(data => {
-
       this.startup = data;
-      console.log(data)
     });
-  }
-
-
-
-
-currentIndex = 0;
-
-  next() {
-    this.currentIndex = (this.currentIndex + 1) % this.startup.imagens.length;
-  }
-
-
-  prev() {
-    this.currentIndex = (this.currentIndex - 1 + this.startup.imagens.length) % this.startup.imagens.length;
   }
 
   menuAberto = false;

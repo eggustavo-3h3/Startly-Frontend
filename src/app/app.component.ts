@@ -20,17 +20,17 @@ export class AppComponent {
   title = 'Startly';
   authService = inject(AuthService);
 
-  startup: any;
+  //startup: any;
   
   constructor(private route: ActivatedRoute, private startupService: startupService, private router: Router) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id)
-    this.startupService.obterStartups(id).subscribe(data => {
-      this.startup = data;
-      console.log(data)
-  });
+  //   const id = this.route.snapshot.paramMap.get('id');
+  //   console.log(id)
+  //   this.startupService.obterStartups(id).subscribe(data => {
+  //     this.startup = data;
+  //     console.log(data)
+  // });
   }
 
   logout() {
@@ -40,6 +40,4 @@ export class AppComponent {
   goToPerfil(id: string) {
     this.router.navigate(['/perfil', id]); // <- envia via path param
   }
-  
-
 }

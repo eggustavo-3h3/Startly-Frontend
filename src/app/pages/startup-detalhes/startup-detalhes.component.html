@@ -1,49 +1,54 @@
 <header>
-  <h1 class="fonte nome">{{ startup.nome }}</h1>
+  <h1 class="fonte nome">{{ startup?.nome }}</h1>
   <br/>
-  <img class="logo" [src]='startup.logo' alt="">
+  <img class="logo" [src]='startup?.logo' alt="">
   <br>
  
   <br>
-  <strong>LinkedIn:</strong><a href=""> {{ startup.linkedIn }}</a><br>
+  <strong>LinkedIn:</strong><a href=""> {{ startup?.linkedIn }}</a><br>
 
 </header>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    @for (si of startup?.imagens; track $index) {
+      <div class="carousel-item" [ngClass]="{'active': $index === 0}">
+        <img [src]='si?.imagem' class="d-block mx-auto carousel-img" />
+      </div>
+    }
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 <div class="container">
   <div class="card descricao">
     <h1>Descrição:</h1>
-    <p class="fonte">{{ startup.descricao }}</p>
+    <p class="fonte">{{ startup?.descricao }}</p>
   </div>
 
   <div class="card metas">
     <h1>Metas:</h1>
     <ul>
-      <li class="fonte">{{ startup.metas }}</li>
+      <li class="fonte">{{ startup?.metas }}</li>
     </ul>
   </div>
-  <div class="carousel">
-    <input type="radio" name="slider" id="slide1" checked>
-    <input type="radio" name="slider" id="slide2">
-    <input type="radio" name="slider" id="slide3">
-  
-    <div class="slides">
-      <div class="slide"  *ngFor="let si of startup.imagens">
-        <img [src]='si.imagem' alt="Imagem 1">
-      </div>
-    </div>
-  
-    <div class="nav">
-      <label for="slide3">❮</label>
-      <label for="slide2">❯</label>
-    </div>
-  </div>
+
+
+
 
   <div class="card area">
     <h1 class="fonte">Área e Tipos de Clientes</h1>
     <p class="fonte areat">
       Somos uma empresa que oferece soluções inovadoras para clientes
-      {{startup.enumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
-      cada mercado, focando em melhorar nas áreas {{startup.atuacoes}}.
+      {{startup?.enumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
+      cada mercado, focando em melhorar nas áreas {{startup?.atuacoes}}.
     </p>
   </div>
 </div>
