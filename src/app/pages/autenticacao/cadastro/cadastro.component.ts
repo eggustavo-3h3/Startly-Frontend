@@ -175,7 +175,7 @@ export class CadastroComponent implements OnInit {
         this.route.navigate(['/portifolio']);
 
         Swal.fire({
-          title: "Pont Start",
+          title: "PontStart",
           html: "Startup Registrada com Sucesso!",
           icon: "success",
           draggable: true
@@ -185,7 +185,7 @@ export class CadastroComponent implements OnInit {
         const erros: string = error.error.join('<br/>');
 
         Swal.fire({
-          title: "Pont Start",
+          title: "PontStart",
           html: erros,
           icon: "error",
           draggable: true

@@ -10,6 +10,11 @@ body {
   gap: 20px;
   justify-content: center;
 }
+.logo{
+  border-radius: 50%;
+
+}
+
 
 .card {
   background-color: #dbe0ea;
@@ -26,21 +31,34 @@ body {
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.nome{
+  font-size: 2.5rem;
+}
+
+.areat{
+  font-size: 1.2rem;
+}
+
 .areaContato {
   width: 100%;
   text-align: center;
 }
 
 .card h2 {
-  font-weight: bold;
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: #000;
+  font-family: 'Jersey 10', sans-serif;
+}
+
+h1{
+  font-size: 1.7rem;
+  font-family: 'jersey 10', 'sans-serif';
 }
 
 .card p,
 .card ul {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.5;
 }
 
@@ -141,28 +159,6 @@ body {
       transform: translateX(-100%);
     }
     #slide3:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide4:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide5:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide6:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide7:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide8:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-    #slide9:checked ~ .slides {
-      transform: translateX(-100%);
-    }
-  
-    #slide10:checked ~ .slides {
       transform: translateX(-100%);
     }
     

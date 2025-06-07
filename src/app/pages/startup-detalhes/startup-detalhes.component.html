@@ -1,12 +1,26 @@
 <header>
-  <h1>{{ startup.nome }}</h1>
+  <h1 class="fonte nome">{{ startup.nome }}</h1>
   <br/>
   <img class="logo" [src]='startup.logo' alt="">
   <br>
  
-
   <br>
-  <h1>Propagandas: </h1>
+  <strong>LinkedIn:</strong><a href=""> {{ startup.linkedIn }}</a><br>
+
+</header>
+
+<div class="container">
+  <div class="card descricao">
+    <h1>Descrição:</h1>
+    <p class="fonte">{{ startup.descricao }}</p>
+  </div>
+
+  <div class="card metas">
+    <h1>Metas:</h1>
+    <ul>
+      <li class="fonte">{{ startup.metas }}</li>
+    </ul>
+  </div>
   <div class="carousel">
     <input type="radio" name="slider" id="slide1" checked>
     <input type="radio" name="slider" id="slide2">
@@ -24,44 +38,12 @@
     </div>
   </div>
 
-  <strong>LinkedIn:</strong><a href="">{{ startup.linkedIn }}</a><br>
-
-</header>
-
-<div class="container">
-  <div class="card descricao">
-    <h2>Descrição:</h2>
-    <p>{{ startup.descricao }}</p>
-  </div>
-
-  <div class="card metas">
-    <h2>Metas:</h2>
-    <ul>
-      <li>{{ startup.metas }}</li>
-    </ul>
-    <!-- <ul>
-        <li>
-          Expandir para novos mercados e regiões, com a meta de atender clientes
-          em 3 novos estados ou países até o final do próximo ano;
-        </li>
-        <li>
-          Ampliar a rede de parceiros estratégicos para oferecer mais soluções
-          aos clientes;
-        </li>
-        <li>
-          Oferecer treinamentos mensais sobre temas essenciais para startups,
-          como financiamento, marketing digital e gestão de equipes,
-          alcançando 200 participantes por evento.
-        </li>
-      </ul> -->
-  </div>
-
   <div class="card area">
-    <h2>Área e Tipos de Clientes</h2>
-    <p>
+    <h1 class="fonte">Área e Tipos de Clientes</h1>
+    <p class="fonte areat">
       Somos uma empresa que oferece soluções inovadoras para clientes
       {{startup.enumTipoDeAtendimento}}. Com foco em resultados e adaptação às necessidades de
-      cada mercado, impulsionamos a transformação digital global.
+      cada mercado, focando em melhorar nas áreas {{startup.atuacoes}}.
     </p>
   </div>
 </div>

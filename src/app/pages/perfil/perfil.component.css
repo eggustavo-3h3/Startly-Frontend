@@ -65,7 +65,9 @@ img{
     margin: 0;
 
   }
-
+  img{
+    border-radius: 50%;
+  }
 
   select{
     width: 318px;

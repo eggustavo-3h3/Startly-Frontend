@@ -27,10 +27,11 @@
       </div>
       <ng-template #loggedIn>
         <div class="avatar">
-        
-          <button type="button" class="button fonte perfil" (click)="goToPerfil(this.authService.startupId!)">Perfil</button>
-          <button type="button" class='botao Logout' (click)="logout()">Logout</button>
-    
+
+          <button type="button" class="button fonte perfil botao"
+            (click)="goToPerfil(this.authService.startupId!)">Perfil</button>
+          <button type="button" class='botao Logout' style="margin-right: 10px;" (click)="logout()">Logout</button>
+
         </div>
       </ng-template>
     </header>
@@ -51,7 +52,7 @@
         <a href="#sobre" title="jQuery">Sobre</a>
       </p>
 
-  
+
 
     </div>
     <!--Left-->
