@@ -1,21 +1,16 @@
 body {
-    margin: 0;
-    background: #fff;
-    color: #000;
-    padding: 2rem;
- }
+  margin: 0;
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+}
 
- .container {
+.container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
-.logo{
-  border-radius: 50%;
-}
-
 
 .card {
   background-color: #dbe0ea;
@@ -32,11 +27,11 @@ body {
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nome{
+.nome {
   font-size: 2.5rem;
 }
 
-.areat{
+.areat {
   font-size: 1.2rem;
 }
 
@@ -49,12 +44,12 @@ body {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: #000;
-  font-family: 'Jersey 10', sans-serif;
+  font-family: "Jersey 10", sans-serif;
 }
 
-h1{
+h1 {
   font-size: 1.7rem;
-  font-family: 'jersey 10', 'sans-serif';
+  font-family: "jersey 10", "sans-serif";
 }
 
 .card p,
@@ -73,98 +68,97 @@ h1{
   text-align: center;
 }
 
+header {
+  text-align: center;
+  padding: 1rem;
+}
 
+.button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 1.5rem;
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-    header {
-      text-align: center;
-      padding: 1rem;
-    }
+a {
+  color: #000;
+  text-decoration: none;
+}
 
-    .button {
-      display: block;
-      margin: 2rem auto;
-      padding: 0.5rem 1.5rem;
-      background-color: #1f2937;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    a {
-      color: #000;
-      text-decoration: none;
-    }
+input[type="radio"] {
+  display: none;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.carousel-img {
+  height: 400px; /* ou qualquer altura que você desejar */
+  object-fit: cover; /* cobre o espaço sem distorcer */
+}
 
-    input[type="radio"] {
-      display: none;
-    }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
 
-    .carousel-img {
-      height: 400px; /* ou qualquer altura que você desejar */
-      object-fit: cover; /* cobre o espaço sem distorcer */
-    }    
+.carousel{
+  margin: 30px;
+}
+/* Navegação */
+.nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      filter: invert(100%);
-    }    
+.nav label {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-    /* Navegação */
-    .nav {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
+.logo {
+  width: 20%;
+  height: auto;
+  border-radius: 50%;
+}
 
-    .nav label {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-  
-    .logo{
-      width: 30%;
-      height: auto;
-    }
+.dropdown {
+  position: center;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+}
 
-    .dropdown {
-      position: center;
-      display: inline-block;
-      padding: 0.5rem 1.5rem;
-    }
-        
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 8x 8px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      min-width: 160px;
-      z-index: 1000;
-      padding: 20px;
-    }
-    
-    .dropdown-content a {
-      display: block;
-      padding: 10px 16px;
-      color: #333;
-      text-decoration: none;
-    }
-    
-    .dropdown-content a:hover {
-      background-color: #f2f2f2;
-    }
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 8x 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  min-width: 160px;
+  z-index: 1000;
+  padding: 20px;
+}
 
-    
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}

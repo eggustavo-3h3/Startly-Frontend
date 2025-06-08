@@ -1,31 +1,16 @@
 <header>
   <h1 class="fonte nome">{{ startup?.nome }}</h1>
-  <br/>
+  <br />
   <img class="logo" [src]='startup?.logo' alt="">
   <br>
- 
+
   <br>
   <strong>LinkedIn:</strong><a href=""> {{ startup?.linkedIn }}</a><br>
+  
 
 </header>
 
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    @for (si of startup?.imagens; track $index) {
-      <div class="carousel-item" [ngClass]="{'active': $index === 0}">
-        <img [src]='si?.imagem' class="d-block mx-auto carousel-img" />
-      </div>
-    }
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
 
 <div class="container">
   <div class="card descricao">
@@ -39,10 +24,28 @@
       <li class="fonte">{{ startup?.metas }}</li>
     </ul>
   </div>
+</div>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    @for (si of startup?.imagens; track $index) {
+    <div class="carousel-item" [ngClass]="{'active': $index === 0}">
+      <img [src]='si?.imagem' class="d-block mx-auto carousel-img" />
+    </div>
+    }
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
-
-
+<div class="container">
   <div class="card area">
     <h1 class="fonte">Área e Tipos de Clientes</h1>
     <p class="fonte areat">
@@ -55,19 +58,19 @@
 
 
 <div class="contatos areaContato">
-<div class="dropdown">
-  <button class="button" (click)="toggleMenu()">
-    Entre em Contato
-  </button>
+  <div class="dropdown">
+    <button class="button fonte" (click)="toggleMenu()">
+      Entre em Contato
+    </button>
 
-  <div *ngIf="menuAberto" class="dropdown-content">
-    <h2>Contato:</h2>
-    <br> 
-    <p>Telefone: {{ startup.telefoneFixo }}</p>
-    <br>
-    <p>email (Corporativo): {{ startup.emailCorporativo }}</p>
-    <br>
-    <p>email (Pessoal): {{ startup.emailPessoal }}</p>
+    <div *ngIf="menuAberto" class="dropdown-content">
+      <h2 class="fonte">Contato:</h2>
+      <br>
+      <p class="fonte">Telefone: {{ startup.telefoneFixo }}</p>
+      <br>
+      <p class="fonte">email (Corporativo): {{ startup.emailCorporativo }}</p>
+      <br>
+      <p class="fonte">email (Pessoal): {{ startup.emailPessoal }}</p>
+    </div>
   </div>
-</div>
 </div>
