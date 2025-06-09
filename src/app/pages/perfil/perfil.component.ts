@@ -49,6 +49,48 @@ export class PerfilComponent {
     { id: 3, descricao: "Internacional" },
   ];
 
+  excluirStartup() {
+    const id = this.route.snapshot.paramMap.get("id");
+    if (!id) {
+      Swal.fire({
+        title: "PontStart",
+        html: "ID da startup não encontrado.",
+        icon: "error",
+        draggable: true,
+      });
+      return;
+    }
+    Swal.fire({
+      title: "Tem certeza?",
+      text: "Esta ação não poderá ser desfeita!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sim, excluir!",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.startupService.removerStartup(id).subscribe({
+          next: () => {
+            Swal.fire({
+              title: "PontStart",
+              html: "Startup excluída com sucesso!",
+              icon: "success",
+              draggable: true,
+            });
+          },
+          error: (error) => {
+            const erros: string = error.error?.join("<br/>") || "Erro ao excluir startup.";
+            Swal.fire({
+              title: "PontStart",
+              html: erros,
+              icon: "error",
+              draggable: true,
+            });
+          },
+        });
+      }
+    });
+  }
   buildForm() {
     this.perfilForm = this.formBuilder.group({
       nome: [null, [Validators.minLength(2), Validators.maxLength(200)]],

@@ -16,12 +16,12 @@
 
         <div class="descricao">
           <label>Descreva sua Startup</label>
-          <input type="text" id="descricao" class="inputTexto" formControlName="descricao" required />
+          <input type="text" id="descricao" class="inputTexto" formControlName="descricao" required placeholder="Descreva brevemente sua Startup" />
         </div>
 
         <div class="metas">
           <label>Descreva as metas da sua Startup:</label>
-          <input type="text" id="metas" class="inputTexto" required formControlName="metas" />
+          <input type="text" id="metas" class="inputTexto" required formControlName="metas" placeholder="Quais são as metas da sua Startup?" />
         </div>
         <div class="botoes-navegacao">
           <button type="button" class="botaocadastro botaoProximo" (click)="proximaEtapa()">
@@ -37,27 +37,27 @@
   <hr>
         <div class="linkdln">
           <label>Link do LinkedIn:</label>
-          <input type="text" id="linkdln" formControlName="linkedIn" class="inputTexto" />
+          <input type="text" id="linkdln" formControlName="linkedIn" class="inputTexto" placeholder="Cole o link do LinkedIn da Startup" />
         </div>
 
         <div class="telefone">
           <label>Telefone:</label>
-          <input type="text" id="telefoneFixo" class="inputTexto" formControlName="telefoneFixo" required />
+          <input type="text" id="telefoneFixo" class="inputTexto" formControlName="telefoneFixo" required placeholder="Digite o telefone de contato" />
         </div>
 
         <div class="emailC">
           <label>E-mail Corporativo:</label>
-          <input type="email" id="emailCorporativo" class="inputTexto" formControlName="emailCorporativo" required />
+          <input type="email" id="emailCorporativo" class="inputTexto" formControlName="emailCorporativo" required placeholder="Digite o e-mail corporativo" />
         </div>
 
         <div class="emailPessoal">
           <label>E-mail Pessoal (opcional):</label>
-          <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" />
+          <input type="email" id="emailPessoal" class="inputTexto" formControlName="emailPessoal" placeholder="Digite o e-mail pessoal (opcional)" />
         </div>
 
         <div class="responsavelCadastro">
           <label>Responsavel Cadastro:</label>
-          <input type="text" id="responsavelCadastro" class="inputTexto" formControlName="responsavelCadastro" />
+          <input type="text" id="responsavelCadastro" class="inputTexto" formControlName="responsavelCadastro" placeholder="Nome do responsável pelo cadastro" />
         </div>
         
         <div class="botoes-navegacao">
@@ -78,12 +78,12 @@
         <hr>
         <div class="qtdFunc">
           <label>Quantidade de Funcionários:</label>
-          <input type="number" id="qtdFunc" class="inputTexto" formControlName="quantidadeFuncionario" required />
+          <input type="number" id="qtdFunc" class="inputTexto" formControlName="quantidadeFuncionario" required placeholder="Ex: 10" />
         </div>
 
         <div class="cnpj">
           <label>CNPJ:</label>
-          <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" />
+          <input type="text" id="cnpj" formControlName="cnpj" class="inputTexto" placeholder="Digite o CNPJ da empresa" />
         </div>
 
         <div class="areaAtuacao">
@@ -137,7 +137,7 @@
         <hr>
         <div class="cep">
           <label>CEP:</label>
-          <input type="text" id="cep" class="inputTexto" formControlName="cep" required />
+          <input type="text" id="cep" class="inputTexto" formControlName="cep" required placeholder="Digite o CEP" />
         </div>
 
         <div class="logradouro">
@@ -148,22 +148,22 @@
 
         <div class="numero">
           <label>Número da Residencia:</label>
-          <input id="numero" class="inputTexto" formControlName="numero" required />
+          <input id="numero" class="inputTexto" formControlName="numero" required placeholder="Número da residência" />
         </div>
 
         <div class="bairro">
           <label>Bairro:</label>
-          <input type="text" id="bairro" class="inputTexto" formControlName="bairro" required />
+          <input type="text" id="bairro" class="inputTexto" formControlName="bairro" required placeholder="Digite o bairro" />
         </div>
 
         <div class="uf">
           <label>UF:</label>
-          <input type="text" id="uf" class="inputTexto" formControlName="uf" required />
+          <input type="text" id="uf" class="inputTexto" formControlName="uf" required placeholder="UF (Ex: SP)" />
         </div>
 
         <div class="estado">
           <label>Municipio:</label>
-          <input type="text" id="municipio" class="inputTexto" formControlName="municipio" required />
+          <input type="text" id="municipio" class="inputTexto" formControlName="municipio" required placeholder="Digite o município" />
         </div>
         <div class="botoes-navegacao">
           <button type="button" class="botaocadastro botaoProximo" (click)="etapaAnterior()">Voltar</button>
@@ -180,7 +180,7 @@
         <hr>
         <div class="video">
           <label>Link vídeo:</label>
-          <input type="text" id="urlVideo" formControlName="urlVideo" class="inputTexto" />
+          <input type="text" id="urlVideo" formControlName="urlVideo" class="inputTexto" placeholder="Cole o link do vídeo promocional" />
         </div>
 
         <div formArrayName="imagens">
@@ -228,12 +228,12 @@
         </div>
         <div class="senha">
           <label>Senha:</label>
-          <input type="password" id="senha" class="inputTexto" formControlName="senha" required />
+          <input type="password" id="senha" class="inputTexto" formControlName="senha" required placeholder="Digite a senha" />
         </div>
 
         <div class="confirmarSenha">
           <label>Confirmar Senha:</label>
-          <input type="password" id="confirmarSenha" class="inputTexto" formControlName="confirmarSenha" required />
+          <input type="password" id="confirmarSenha" class="inputTexto" formControlName="confirmarSenha" required placeholder="Confirme a senha" />
         </div>
 
         <div class="botao">
