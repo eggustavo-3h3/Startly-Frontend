@@ -137,6 +137,7 @@ span{
   border-radius: 50%;
 }
 
+
 .dropdown {
   position: center;
   display: inline-block;
@@ -165,4 +166,14 @@ span{
 
 .dropdown-content a:hover {
   background-color: #f2f2f2;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

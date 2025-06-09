@@ -110,6 +110,7 @@ img{
   padding: 20px 16px;
   font-size: 14px;
   color: #333;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -123,12 +124,14 @@ img{
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
-  margin-top: 16px;
+  margin-top: 20px;
   border-radius: 4px;
+  margin-top: 7%;
 }
 
 .texto-com-ellipsis {
   height: 80px;
+  text-align: center;
   white-space: normal; /* Impede quebra de linha */
   overflow: hidden; /* Oculta o excesso de texto */
   text-overflow: ellipsis; /* Adiciona reticências no final */
