@@ -1,67 +1,60 @@
 <form [formGroup]="perfilForm" (ngSubmit)="atualizarStartup()">
     <div class="fonte startup">
-        <h1>{{startup.nome}}</h1>
+        <h1>{{startup?.nome}}</h1>
 
-        <img [src]='startup.logo' alt="">
+        <img [src]='startup?.logo' alt="">
         <div class="campos">
             <div class="esquerda">
                 <div class="nome">
                     <p>Nome:</p>
-                    <input type="text" class="inputTexto" [placeholder]='startup.nome' formControlName="nome" />
+                    <input type="text" class="inputTexto" formControlName="nome" />
                 </div>
 
                 <div class="qtdFuncionario">
                     <p>Quantidade de Funcionários:</p>
-                    <input type="number" min="1" max="500" class="inputTexto"
-                        [placeholder]='startup.quantidadeFuncionario' formControlName="quantidadeFuncionarios" />
+                    <input type="number" min="1" max="500" class="inputTexto" formControlName="quantidadeFuncionario" />
                 </div>
 
                 <div class="metas">
                     <p>Metas da sua Startup:</p>
-                    <input type="text" id="metas" class="inputTexto" [placeholder]='startup.metas'
-                        formControlName="metas" />
+                    <input type="text" id="metas" class="inputTexto" formControlName="metas" />
                 </div>
                 <p>Descricao da sua Startup:</p>
-                <textarea id="metas" [placeholder]='startup.descricao' formControlName="descricao"
-                    class="campo-textarea"></textarea>
+                <textarea id="metas" formControlName="descricao" class="campo-textarea"></textarea>
 
             </div>
             <div class="direita">
 
-                <div class="tipoDeCliente">
-                    <p>Tipo de Clientes:</p>
-                    <select class="fonte">
-                        <option value="Estadual">Local</option>
-                        <option value="Nacional">Nacional</option>
-                        <option value="Internacional">Internacional</option>
+                <div class="tipoCliente">
+                    <label>Tipo de Atendimento</label>
+                    <select formControlName="tipoAtendimento" required>
+                        @for (tc of enumTipoAtendimento; track $index) {
+                        <option [ngValue]="tc.id">{{ tc.descricao }}</option>
+                        }
                     </select>
                 </div>
 
                 <div class="telefone">
                     <p>Telefone:</p>
-                    <input type="text" [placeholder]='startup.telefoneFixo' formControlName="telefoneFixo"
-                        class="inputTexto">
+                    <input type="text" formControlName="telefoneFixo" class="inputTexto">
                 </div>
 
                 <div class="email">
                     <p>E-Mail Pessoal:</p>
-                    <input type="text" [placeholder]='startup.emailPessoal' formControlName="emailPessoal"
-                        class="inputTexto">
+                    <input type="text" formControlName="emailPessoal" class="inputTexto">
                 </div>
 
                 <div class="emailC">
                     <p>E-Mail Corporativo:</p>
-                    <input type="text" [placeholder]='startup.emailCorporativo' formControlName="emailCorporativo"
-                        class="inputTexto">
+                    <input type="text" formControlName="emailCorporativo" class="inputTexto">
                 </div>
 
                 <div class="ticket">
-                    <p>Ticket Médio:</p>
-                    <select class="fonte">
-                        <option value="100">Até R$100</option>
-                        <option value="100-200">De R$100 a R$200</option>
-                        <option value="201-300">De R$201 a R$300</option>
-                        <option value="300">R$300+</option>
+                    <label>Ticket Médio:</label>
+                    <select formControlName="ticketMedio" required>
+                        @for (tm of enumTicketMedio; track $index) {
+                        <option [ngValue]="tm.id">{{ tm.descricao }}</option>
+                        }
                     </select>
                 </div>
                 
@@ -70,8 +63,8 @@
             </div>
         </div>
         <div>
-        <button class="botoes" style="margin-right: 20px;" type="button" onclick="excluirStartup()">Excluir</button>
-        <button class="botoes" type="submit">Editar</button>
+        <!-- <button class="botoes" style="margin-right: 20px;" type="button" onclick="excluirStartup()">Excluir</button> -->
+        <button class="botoes" type="submit">Salvar Alterações</button>
     </div>
     </div>
     <br>

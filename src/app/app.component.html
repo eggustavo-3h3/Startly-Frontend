@@ -18,7 +18,6 @@
         <a href="#sobre">Sobre</a>
       </nav>
 
-
       <div *ngIf="!this.authService.isAuthenticated(); else loggedIn">
         <div class="actions">
           <a href="/cadastro" class="btn register">Cadastrar-se</a>
@@ -28,8 +27,7 @@
       <ng-template #loggedIn>
         <div class="avatar">
 
-          <button type="button" class="button fonte perfil botao"
-            (click)="goToPerfil(this.authService.startupId!)">Perfil</button>
+          <button type="button" class="button fonte perfil botao" (click)="goToPerfil()">Perfil</button>
           <button type="button" class='botao Logout' style="margin-right: 10px;" (click)="logout()">Logout</button>
 
         </div>

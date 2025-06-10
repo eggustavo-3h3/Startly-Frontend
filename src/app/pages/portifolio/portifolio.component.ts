@@ -45,7 +45,6 @@ export class PortifolioComponent {
       .subscribe({
         next: (dados) => {
           this.startups$ = of(dados); // transforma array em Observable
-          console.log('Startups encontradas:', dados);
         },
         error: (err) => {
           console.error('Erro ao buscar startups', err);

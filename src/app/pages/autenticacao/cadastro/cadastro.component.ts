@@ -165,8 +165,6 @@ export class CadastroComponent implements OnInit {
   salvarStartup() {
     const dadosStartup = this.formStartup.getRawValue() as Startup;
 
-    console.log("dadosFormulario: ", dadosStartup);
-
     // Corrige para o tipo esperado no model NovaStartup
     (dadosStartup as any).atuacoes = this.atuacoesSelecionadas.map(a => ({ atuacaoId: a.id }));
 

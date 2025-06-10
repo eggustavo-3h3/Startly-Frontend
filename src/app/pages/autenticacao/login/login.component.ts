@@ -7,6 +7,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent {
   password = "";
 
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar){
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router){
 
   } 
 
@@ -43,6 +44,8 @@ export class LoginComponent {
           "Fechar",
           {duration: 1000}
         );
+
+        this.router.navigate(['/']);
       },
       error:() => {
         this.snackBar.open(

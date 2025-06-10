@@ -14,8 +14,23 @@ export class AuthService{
     private tokenSubject = new BehaviorSubject<string | null>(
        localStorage.getItem('token')
     );
+
+    private idSubject = new BehaviorSubject<string | null>(null);
+
+    setId(id: string | null) {
+        this.idSubject.next(id);
+    }
+
+    getId$(): Observable<string | null> {
+        return this.idSubject.asObservable();
+    }
+
+    getIdAtual(): string | null {
+        return this.idSubject.value;
+    }
+
     token: any;
-    startupId: string | null = null;
+    //startupId: string | null = null;
 
     constructor(private http: HttpClient, private router: Router){}
 
@@ -27,9 +42,16 @@ export class AuthService{
             }).subscribe({
                 next: (response) => {
                     localStorage.setItem('token', response);
-                    this.tokenSubject.next(response);
+                    this.tokenSubject.next(response);                
 
-                    this.startupId = this.getClaim("Id");
+                    //this.startupId = this.getClaim("Id");
+
+                    const payload = this.decodeJwtPayload(response);
+                    if (payload) {
+                        this.setId(payload.Id);
+                    } else {
+                        this.setId(null);
+                    }
 
                     observable.next(response);
                     observable.complete();
@@ -47,6 +69,7 @@ export class AuthService{
     logout(){
         localStorage.removeItem('token');
         this.tokenSubject.next(null);
+        this.idSubject.next(null);
         this.router.navigate(['/login']);
     }
 
@@ -60,19 +83,29 @@ export class AuthService{
         });
     }
 
-    getClaim<T = any>(claimName: string): T | null {
-        const token = this.tokenSubject.value;
-        if (!token) return null;
+    // getClaim<T = any>(claimName: string): T | null {
+    //     const token = this.tokenSubject.value;
+    //     if (!token) return null;
     
+    //     try {
+    //       const decoded: any = jwtDecode(token);
+    //       console.log("decoded: ", decoded);
+    //       return decoded[claimName] ?? null;
+    //     } catch (error) {
+    //       console.error('Erro ao decodificar o token:', error);
+    //       return null;
+    //     }
+    //   }
+
+    decodeJwtPayload(token: string): any {
         try {
-          const decoded: any = jwtDecode(token);
-          console.log("decoded: ", decoded);
-          return decoded[claimName] ?? null;
-        } catch (error) {
-          console.error('Erro ao decodificar o token:', error);
+          const payload = token.split('.')[1];
+          return JSON.parse(atob(payload));
+        } catch (e) {
           return null;
         }
       }
+
 }
 
 

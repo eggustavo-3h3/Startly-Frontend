@@ -18,26 +18,31 @@ import { startupService } from './services/startup.service';
 })
 export class AppComponent {
   title = 'Startly';
+  idUsuario: string | null = null;
   authService = inject(AuthService);
+  id: any
 
-  //startup: any;
+  startup: any;
   
   constructor(private route: ActivatedRoute, private startupService: startupService, private router: Router) {}
 
   ngOnInit() {
-  //   const id = this.route.snapshot.paramMap.get('id');
-  //   console.log(id)
-  //   this.startupService.obterStartups(id).subscribe(data => {
-  //     this.startup = data;
-  //     console.log(data)
-  // });
+    this.authService.getId$().subscribe(id => {
+      this.idUsuario = id;
+    });
+    
+    if (this.idUsuario) {
+      this.startupService.obterStartups(this.idUsuario).subscribe(data => {
+        this.startup = data;
+      });      
+    }
   }
 
   logout() {
     this.authService.logout();
   }
 
-  goToPerfil(id: string) {
-    this.router.navigate(['/perfil', id]); // <- envia via path param
+  goToPerfil() {
+    this.router.navigate(['/perfil', this.idUsuario]); // <- envia via path param
   }
 }
