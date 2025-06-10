@@ -6,22 +6,28 @@ import { environment } from "../../environments/environment";
 import { AuthService } from "./auth.service";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: "root",
 })
-
 export class AtuacaoService {
-    private baseUrl = environment.apiUrl;
+  private baseUrl = environment.apiUrl;
 
-    constructor (private http : HttpClient, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+  ) {}
 
-    //funcao para listar as atuacoes
-    listarAtuacoes () :  Observable<Atuacao[]>{        
-        return this.http.get<Atuacao[]>(`${this.baseUrl}/atuacao/listar`, { headers: this.authService.getAutheHeaders() })
-    }
+  //funcao para listar as atuacoes
+  listarAtuacoes(): Observable<Atuacao[]> {
+    return this.http.get<Atuacao[]>(`${this.baseUrl}/atuacao/listar`, {
+      headers: this.authService.getAutheHeaders(),
+    });
+  }
 
-    //funcao para excluir atuacao
-    excluirAtuacao (id:number) : Observable<Atuacao[]> {        
-        return this.http.delete<Atuacao[]>(`${this.baseUrl}/atuacao/remover/${id}`, { headers: this.authService.getAutheHeaders() })
-    }
+  //funcao para excluir atuacao
+  excluirAtuacao(id: number): Observable<Atuacao[]> {
+    return this.http.delete<Atuacao[]>(
+      `${this.baseUrl}/atuacao/remover/${id}`,
+      { headers: this.authService.getAutheHeaders() },
+    );
+  }
 }
-

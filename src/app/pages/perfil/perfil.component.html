@@ -1,71 +1,102 @@
 <form [formGroup]="perfilForm" (ngSubmit)="atualizarStartup()">
-    <div class="fonte startup">
-        <h1>{{startup?.nome}}</h1>
-
-        <img [src]='startup?.logo' alt="">
-        <div class="campos">
-            <div class="esquerda">
-                <div class="nome">
-                    <p>Nome:</p>
-                    <input type="text" class="inputTexto" formControlName="nome" />
-                </div>
-
-                <div class="qtdFuncionario">
-                    <p>Quantidade de Funcionários:</p>
-                    <input type="number" min="1" max="500" class="inputTexto" formControlName="quantidadeFuncionario" />
-                </div>
-
-                <div class="metas">
-                    <p>Metas da sua Startup:</p>
-                    <input type="text" id="metas" class="inputTexto" formControlName="metas" />
-                </div>
-                <p>Descricao da sua Startup:</p>
-                <textarea id="metas" formControlName="descricao" class="campo-textarea"></textarea>
-
-            </div>
-            <div class="direita">
-
-                <div class="tipoCliente">
-                    <label>Tipo de Atendimento</label>
-                    <select formControlName="tipoAtendimento" required>
-                        @for (tc of enumTipoAtendimento; track $index) {
-                        <option [ngValue]="tc.id">{{ tc.descricao }}</option>
-                        }
-                    </select>
-                </div>
-
-                <div class="telefone">
-                    <p>Telefone:</p>
-                    <input type="text" formControlName="telefoneFixo" class="inputTexto">
-                </div>
-
-                <div class="email">
-                    <p>E-Mail Pessoal:</p>
-                    <input type="text" formControlName="emailPessoal" class="inputTexto">
-                </div>
-
-                <div class="emailC">
-                    <p>E-Mail Corporativo:</p>
-                    <input type="text" formControlName="emailCorporativo" class="inputTexto">
-                </div>
-
-                <div class="ticket">
-                    <label>Ticket Médio:</label>
-                    <select formControlName="ticketMedio" required>
-                        @for (tm of enumTicketMedio; track $index) {
-                        <option [ngValue]="tm.id">{{ tm.descricao }}</option>
-                        }
-                    </select>
-                </div>
-                
-                <p>Adicionar Video Promocional</p>
-                <input type="text" class="fonte inputTexto" placeholder="Anexar Url do video">
-            </div>
+  <div class="fonte startup">
+    <h1>{{ startup?.nome }}</h1>
+    <div class="imagem">
+      <img [src]="startup?.logo" alt="" />
+      <hr />
+    </div>
+    <div class="campos">
+      <div class="esquerda">
+        <div class="nome">
+          <p class="label">Nome:</p>
+          <input type="text" class="inputTexto input" formControlName="nome" />
         </div>
-        <div>
-        <!-- <button class="botoes" style="margin-right: 20px;" type="button" onclick="excluirStartup()">Excluir</button> -->
-        <button class="botoes" type="submit">Salvar Alterações</button>
+
+        <div class="qtdFuncionario">
+          <p class="label">Quantidade de Funcionários:</p>
+          <input
+            type="number"
+            min="1"
+            max="500"
+            class="inputTexto input"
+            formControlName="quantidadeFuncionario"
+          />
+        </div>
+
+        <div class="metas">
+          <p class="label">Metas da sua Startup:</p>
+          <input
+            type="text"
+            id="metas"
+            class="inputTexto input"
+            formControlName="metas"
+          />
+        </div>
+        <p class="label">Descricao da sua Startup:</p>
+        <textarea
+          id="metas"
+          formControlName="descricao"
+          class="campo-textarea"
+        ></textarea>
+      </div>
+      <div class="direita">
+        <div class="tipoCliente">
+          <label class="label">Tipo de Atendimento</label><br />
+          <select formControlName="tipoAtendimento" required class="input">
+            @for (tc of enumTipoAtendimento; track $index) {
+              <option [ngValue]="tc.id">{{ tc.descricao }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="telefone">
+          <p class="label">Telefone:</p>
+          <input
+            type="text"
+            formControlName="telefoneFixo"
+            class="inputTexto input"
+          />
+        </div>
+
+        <div class="email">
+          <p class="label">E-Mail Pessoal:</p>
+          <input
+            type="text"
+            formControlName="emailPessoal"
+            class="inputTexto input"
+          />
+        </div>
+
+        <div class="emailC">
+          <p class="label">E-Mail Corporativo:</p>
+          <input
+            type="text"
+            formControlName="emailCorporativo"
+            class="inputTexto input"
+          />
+        </div>
+
+        <div class="ticket">
+          <label class="label">Ticket Médio:</label><br />
+          <select formControlName="ticketMedio" required class="input">
+            @for (tm of enumTicketMedio; track $index) {
+              <option [ngValue]="tm.id">{{ tm.descricao }}</option>
+            }
+          </select>
+        </div>
+
+        <p class="label">Adicionar Video Promocional</p>
+        <input
+          type="text"
+          class="fonte inputTexto input"
+          placeholder="    Anexar Url do video"
+        />
+      </div>
     </div>
+    <div class="botao">
+      <!-- <button class="botoes" style="margin-right: 20px;" type="button" onclick="excluirStartup()">Excluir</button> -->
+      <button class="botoes bs" type="submit">Salvar Alterações</button>
     </div>
-    <br>
+  </div>
+  <br />
 </form>

@@ -1,7 +1,6 @@
 <div class="portifolio fonte">
-  <h1>Portifolio</h1>
+  <h1>Porti<span>folio</span></h1>
 </div>
-
 <div class="page-container">
   <div class="search-container">
     <input
@@ -19,25 +18,30 @@
 <main>
   <div class="card-container">
     <div class="card" *ngFor="let startup of startups$ | async">
-
       <div class="top">
-          <img [src]='startup.logo' alt="">    
-        <div class="TagLadoLado">
-          <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{ atuacao.descricao }}</span>
-        </div>
+        <img [src]="startup.logo" alt="" />
       </div>
-      
+      <div class="TagLadoLado">
+        <span class="tag" *ngFor="let atuacao of startup.atuacoes">{{
+          atuacao.descricao
+        }}</span>
+      </div>
+
       <div class="bottom">
-        <p class="fonte tamanho" style="text-align: center; font-size: xx-large;">{{startup.nome}}</p>
-        <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}<span>...</span></p>
+        <p
+          class="fonte tamanho"
+          style="text-align: center; font-size: xx-large"
+        >
+          {{ startup.nome }}
+        </p>
+        <hr />
+        <p class="fonte tamanho texto-com-ellipsis">{{ startup.descricao }}</p>
+        <span style="font-size: x-large">...</span>
         <a [routerLink]="['/startup', startup.id]" class="button">Sobre</a>
       </div>
     </div>
   </div>
 </main>
 <footer class="text-body-secondary py-5">
-  <div class="container">
-
-
-  </div>
+  <div class="container"></div>
 </footer>

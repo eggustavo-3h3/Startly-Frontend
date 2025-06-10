@@ -1,7 +1,5 @@
 <app-base-ui>
   <router-outlet>
-
-
     <header class="navbar fonte">
       <div class="logo">
         <a href="/"><img class="logo" src="logo.png" alt="logo" /></a>
@@ -9,7 +7,9 @@
 
       <!-- Botão Hamburguer e checkbox -->
       <input type="checkbox" id="check" />
-      <label for="check" class="checkbtn" style="color: black; font-size: 8vh;">&equiv;</label>
+      <label for="check" class="checkbtn" style="color: black; font-size: 8vh"
+        >&equiv;</label
+      >
 
       <nav class="menu">
         <a href="/">Início</a>
@@ -26,15 +26,24 @@
       </div>
       <ng-template #loggedIn>
         <div class="avatar">
-
-          <button type="button" class="button fonte perfil botao" (click)="goToPerfil()">Perfil</button>
-          <button type="button" class='botao Logout' style="margin-right: 10px;" (click)="logout()">Logout</button>
-
+          <button
+            type="button"
+            class="button fonte perfil botao"
+            (click)="goToPerfil()"
+          >
+            Perfil
+          </button>
+          <button
+            type="button"
+            class="botao Logout"
+            style="margin-right: 10px"
+            (click)="logout()"
+          >
+            Logout
+          </button>
         </div>
       </ng-template>
     </header>
-
-
 
     <br /><br />
   </router-outlet>
@@ -49,9 +58,6 @@
         <a href="/portifolio" title="Css">Portifólio</a>
         <a href="#sobre" title="jQuery">Sobre</a>
       </p>
-
-
-
     </div>
     <!--Left-->
 

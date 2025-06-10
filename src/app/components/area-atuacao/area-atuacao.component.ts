@@ -1,15 +1,15 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Atuacao } from '../../models/atuacoes.model';
-import { AtuacaoService } from '../../services/atuacao.service';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Atuacao } from "../../models/atuacoes.model";
+import { AtuacaoService } from "../../services/atuacao.service";
+import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'app-area-atuacao',
+  selector: "app-area-atuacao",
   imports: [FormsModule, CommonModule],
   standalone: true,
-  templateUrl: './area-atuacao.component.html',
-  styleUrl: './area-atuacao.component.css'
+  templateUrl: "./area-atuacao.component.html",
+  styleUrl: "./area-atuacao.component.css",
 })
 export class AreaAtuacaoComponent implements OnInit {
   atuacoes: Atuacao[] = [];
@@ -21,8 +21,8 @@ export class AreaAtuacaoComponent implements OnInit {
 
   ngOnInit(): void {
     this.atuacaoService.listarAtuacoes().subscribe({
-      next: (dados) => this.atuacoes = dados,
-      error: (erro) => console.error('Erro ao buscar áreas de atuação:', erro)
+      next: (dados) => (this.atuacoes = dados),
+      error: (erro) => console.error("Erro ao buscar áreas de atuação:", erro),
     });
   }
 

@@ -1,5 +1,4 @@
 export interface StartupVideo {
-     id: string;
-     linkVideo: string; 
+  id: string;
+  linkVideo: string;
 }
-

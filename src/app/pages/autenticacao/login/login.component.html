@@ -1,18 +1,24 @@
 <div class="container">
-    <h2 class = 'fonte'> <span class="highlight">Login</span></h2>
-    
-    <form (ngSubmit)="onLogin()">
-      <label for="senha-atual fonte">Login</label>
-      <input matInput [(ngModel)]="username" name="username" />
-      
-      <label for="nova-senha fonte">Senha</label>
-      <input matInput [(ngModel)]="password" name="password" type="password" required/>
-      
-      <button class="fonte" type="submit">Entrar</button>
-      <hr>
-      <p>Não tem conta? <a href="cadastro">Cadastrar-se</a>  </p>
-      <p><a href="alterar-senha">Alterar Senha</a> </p>
-      <p><a href="resetar-senha">Resetar Senha</a> </p>
-      <!-- <p><a href="resetar-senha">Resetar senha</a> </p> -->
-    </form>
-  </div>
+  <h2 class="fonte"><span class="highlight">Login</span></h2>
+
+  <form (ngSubmit)="onLogin()">
+    <label for="senha-atual fonte">Login</label>
+    <input matInput [(ngModel)]="username" name="username" />
+
+    <label for="nova-senha fonte">Senha</label>
+    <input
+      matInput
+      [(ngModel)]="password"
+      name="password"
+      type="password"
+      required
+    />
+
+    <button class="fonte" type="submit">Entrar</button>
+    <hr />
+    <p>Não tem conta? <a href="cadastro">Cadastrar-se</a></p>
+    <p><a href="alterar-senha">Alterar Senha</a></p>
+    <p><a href="resetar-senha">Resetar Senha</a></p>
+    <!-- <p><a href="resetar-senha">Resetar senha</a> </p> -->
+  </form>
+</div>

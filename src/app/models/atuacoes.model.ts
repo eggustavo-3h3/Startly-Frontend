@@ -1,4 +1,4 @@
 export interface Atuacao {
-    id: string,
-    descricao: string,
+  id: string;
+  descricao: string;
 }

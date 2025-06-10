@@ -1,4 +1,4 @@
 export interface StartupImagem {
-    id?: string;
-    imagem: string;
+  id?: string;
+  imagem: string;
 }

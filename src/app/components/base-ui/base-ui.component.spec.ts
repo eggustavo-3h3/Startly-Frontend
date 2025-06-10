@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BaseUiComponent } from './base-ui.component';
+import { BaseUiComponent } from "./base-ui.component";
 
-describe('BaseUiComponent', () => {
+describe("BaseUiComponent", () => {
   let component: BaseUiComponent;
   let fixture: ComponentFixture<BaseUiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BaseUiComponent]
-    })
-    .compileComponents();
+      imports: [BaseUiComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BaseUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

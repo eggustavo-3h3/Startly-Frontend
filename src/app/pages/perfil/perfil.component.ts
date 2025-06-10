@@ -39,7 +39,7 @@ export class PerfilComponent {
     private authService: AuthService,
     private startupService: startupService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {
     this.perfilForm = this.formBuilder.group({
       id: [null],
@@ -56,24 +56,22 @@ export class PerfilComponent {
       urlVideo: [null],
       imagens: [null],
     });
-
   }
   startup: any;
-  
+
   tipoCliente: string | null = null;
 
   enumTicketMedio = [
-    { id: 1, descricao: '10 a 49' },
-    { id: 2, descricao: '50 a 99' },
-    { id: 3, descricao: '100+' }
-  ]
+    { id: 1, descricao: "10 a 49" },
+    { id: 2, descricao: "50 a 99" },
+    { id: 3, descricao: "100+" },
+  ];
 
   enumTipoAtendimento = [
-    { id: 1, descricao: 'Estadual' },
-    { id: 2, descricao: 'Nacional' },
-    { id: 3, descricao: 'Internacional' }
-  ]
-
+    { id: 1, descricao: "Estadual" },
+    { id: 2, descricao: "Nacional" },
+    { id: 3, descricao: "Internacional" },
+  ];
 
   // excluirStartup() {
   //   const id = this.route.snapshot.paramMap.get("id");

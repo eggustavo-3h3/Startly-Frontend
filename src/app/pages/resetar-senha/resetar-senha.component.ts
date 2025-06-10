@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-resetar-senha',
+  selector: "app-resetar-senha",
   imports: [],
-  templateUrl: './resetar-senha.component.html',
-  styleUrl: './resetar-senha.component.css'
+  templateUrl: "./resetar-senha.component.html",
+  styleUrl: "./resetar-senha.component.css",
 })
-export class ResetarSenhaComponent {
-
-}
+export class ResetarSenhaComponent {}

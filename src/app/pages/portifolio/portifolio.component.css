@@ -1,39 +1,45 @@
-*{
+* {
   margin: 0%;
   padding: 0%;
 }
-p{
+p {
   max-width: 100ch;
   word-wrap: break-word; /* Permite a quebra de linha */
-  white-space: normal; 
-
+  white-space: normal;
 }
-.pesquisa{
-    margin-top: 2%;
-    text-align: center;
-    padding-left: 2%;
+.pesquisa {
+  margin-top: 2%;
+  text-align: center;
+  padding-left: 2%;
+}
+.container {
+  margin-top: 3vh;
+}
 
-  }
-  .container{
-    margin-top: 3vh;
-  }
-  
- .tamanho{
-   font-size: 3dvh;
- }
+span {
+  color: #0e3a70;
+}
 
-  .TagLadoLado{
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-  }
-  .lupa{
-    width: 2vh;
-  }
+.tamanho {
+  font-size: 3dvh;
+}
 
-  .portifolio {
-    background-color: #B3BDD1 ;
-    text-align: center;
+.TagLadoLado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  flex-direction: row;
+}
+
+.lupa {
+  width: 2vh;
+}
+
+.portifolio {
+  background-color: #b3bdd1;
+  text-align: center;
 }
 
 .card-container {
@@ -58,7 +64,7 @@ p{
   height: 600px;
   border: 1px solid #000;
   background-color: #fff;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 2vh;
 }
 
@@ -82,7 +88,7 @@ p{
   object-fit: cover;
   background: #f5f5f5;
 }
-img{
+img {
   width: 100%;
 }
 
@@ -92,17 +98,19 @@ img{
   font-size: 12px;
   padding: 4px 10px;
   border-radius: 4px;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
   font-weight: bold;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  margin: 0 4px 4px 0;
   max-width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   z-index: 2;
+  height: 28px;
 }
 
 .bottom {
@@ -130,7 +138,8 @@ img{
 }
 
 .texto-com-ellipsis {
-  height: 80px;
+  height: 93px;
+  width: 100%;
   text-align: center;
   white-space: normal; /* Impede quebra de linha */
   overflow: hidden; /* Oculta o excesso de texto */
@@ -171,9 +180,9 @@ img{
 .page-container {
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  height: 10vh;            /* Ajusta a altura para 60% da altura da tela */
-  margin: 0 auto;          /* Garante que o conteúdo fique centralizado */
+  align-items: center; /* Centraliza verticalmente */
+  height: 10vh; /* Ajusta a altura para 60% da altura da tela */
+  margin: 0 auto; /* Garante que o conteúdo fique centralizado */
 }
 
 /* Estilos da barra de pesquisa */

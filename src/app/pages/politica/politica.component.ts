@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-politica',
+  selector: "app-politica",
   imports: [],
-  templateUrl: './politica.component.html',
-  styleUrl: './politica.component.css'
+  templateUrl: "./politica.component.html",
+  styleUrl: "./politica.component.css",
 })
 export class PoliticaComponent {
   voltar() {

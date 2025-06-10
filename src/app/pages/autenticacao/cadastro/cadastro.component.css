@@ -89,7 +89,7 @@ h1 {
 
 /* botao adicionar */
 .areaAtuacao button {
-  background-color: #bcc7dd; 
+  background-color: #bcc7dd;
   height: 1.8rem;
   font-size: 1.3rem;
   padding: 0.5rem 1.5rem;
@@ -131,21 +131,21 @@ h1 {
   margin-left: 4px;
   cursor: pointer;
   padding: 0 4px;
-} 
+}
 
-.campos2{
+.campos2 {
   width: 75%;
   align-items: center;
   margin: 0 auto;
 }
 
- .botaoProximo{
+.botaoProximo {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.botaoAnterior{
+.botaoAnterior {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,22 +156,20 @@ h1 {
   display: grid;
   gap: 10px; /* espaço maior para ficar mais claro */
   grid-template-columns: repeat(3, 1fr);
-  
+
   justify-items: center; /* centraliza horizontalmente o conteúdo das células */
-  align-items: center;   /* centraliza verticalmente o conteúdo das células */
+  align-items: center; /* centraliza verticalmente o conteúdo das células */
 }
 
 .galeria img {
-  height: 150px;        /* altura fixa */
-  width: auto;          /* largura automática para manter proporção */
-  object-fit: contain;  /* mostra a imagem inteira, sem cortes */
-  
+  height: 150px; /* altura fixa */
+  width: auto; /* largura automática para manter proporção */
+  object-fit: contain; /* mostra a imagem inteira, sem cortes */
+
   display: block;
   background-color: #eee;
-  margin: 0 auto;       /* garante centralização horizontal caso precise */
+  margin: 0 auto; /* garante centralização horizontal caso precise */
 }
-
-
 
 @media (max-width: 900px) {
   .campos {
@@ -206,21 +204,21 @@ h1 {
   }
 
   .galeria {
-  display: grid;
-  gap: 1px;
-   margin: 0 auto;
-   width: 250px; 
-  align-items: flex-start; /* ou 'center' se quiser centralizar na vertical */
-   grid-template-columns: repeat(1, 1fr); 
-}
+    display: grid;
+    gap: 1px;
+    margin: 0 auto;
+    width: 250px;
+    align-items: flex-start; /* ou 'center' se quiser centralizar na vertical */
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-.galeria img {
-  height: 75px;           /* altura fixa */
-  width: 75px;             /* largura automática para manter proporção */
-  object-fit: contain;     /* mostra a imagem toda, sem cortes */
-  display: block;
-  background-color: #eee;  /* opcional, ajuda a visualizar o espaço */
-}
+  .galeria img {
+    height: 75px; /* altura fixa */
+    width: 75px; /* largura automática para manter proporção */
+    object-fit: contain; /* mostra a imagem toda, sem cortes */
+    display: block;
+    background-color: #eee; /* opcional, ajuda a visualizar o espaço */
+  }
 }
 
 @media (max-width: 600px) {

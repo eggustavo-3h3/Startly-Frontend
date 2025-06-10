@@ -1,6 +1,10 @@
-<select [(ngModel)]="atuacaoSelecionadaId" (ngModelChange)="onSelecionar($event)" id="area">
-    <option [ngValue]="null" disabled selected>Selecione...</option>
-    <option *ngFor="let atuacao of atuacoes" [value]="atuacao.id">
-        {{ atuacao.descricao }}
-    </option>
+<select
+  [(ngModel)]="atuacaoSelecionadaId"
+  (ngModelChange)="onSelecionar($event)"
+  id="area"
+>
+  <option [ngValue]="null" disabled selected>Selecione...</option>
+  <option *ngFor="let atuacao of atuacoes" [value]="atuacao.id">
+    {{ atuacao.descricao }}
+  </option>
 </select>
